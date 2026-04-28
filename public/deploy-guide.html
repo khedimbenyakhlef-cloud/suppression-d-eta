@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Guide de Déploiement — Suppression Déta</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap');
+:root{--cyan:#00e5ff;--orange:#ff6b00;--bg:#020408;--panel:#0a1525;--border:#1a3a5c;--text:#b0c8e0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:40px 20px;}
+.container{max-width:860px;margin:0 auto;}
+.logo{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--cyan);text-shadow:0 0 30px rgba(0,229,255,.5);margin-bottom:8px;}
+.subtitle{font-family:'Share Tech Mono',monospace;font-size:.8rem;color:var(--orange);letter-spacing:.3em;margin-bottom:40px;}
+h2{font-family:'Orbitron',monospace;font-size:.9rem;font-weight:700;color:var(--cyan);letter-spacing:.2em;margin:32px 0 16px;display:flex;align-items:center;gap:10px;}
+h2::before{content:'';width:16px;height:2px;background:var(--cyan);}
+.card{background:var(--panel);border:1px solid var(--border);padding:20px 24px;margin-bottom:16px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
+.step{display:flex;gap:16px;margin-bottom:12px;align-items:flex-start;}
+.step-num{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:var(--cyan);min-width:32px;}
+.step-content{flex:1;}
+.step-title{font-size:1rem;font-weight:700;color:#e8f4ff;margin-bottom:4px;}
+.step-desc{font-size:.85rem;line-height:1.6;}
+code{font-family:'Share Tech Mono',monospace;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.2);padding:2px 8px;font-size:.75rem;color:var(--cyan);}
+pre{font-family:'Share Tech Mono',monospace;background:#050b14;border:1px solid var(--border);padding:16px;font-size:.75rem;color:#00e5ff;overflow-x:auto;margin:10px 0;line-height:1.7;}
+.badge{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:.6rem;padding:3px 10px;border:1px solid;letter-spacing:.1em;margin:4px 4px 4px 0;}
+.badge-green{border-color:#00e676;color:#00e676;}
+.badge-cyan{border-color:var(--cyan);color:var(--cyan);}
+.badge-orange{border-color:var(--orange);color:var(--orange);}
+.file-tree{font-family:'Share Tech Mono',monospace;font-size:.75rem;line-height:2;color:var(--text);padding:12px;}
+.file-tree .dir{color:var(--cyan);}
+.file-tree .file{color:#b0c8e0;}
+.file-tree .important{color:var(--orange);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:600px){.grid2{grid-template-columns:1fr;}}
+.stat{text-align:center;padding:16px;}
+.stat-val{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:900;color:var(--cyan);}
+.stat-lbl{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);margin-top:4px;letter-spacing:.1em;}
+a{color:var(--cyan);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:32px 0;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">SUPPRESSION DÉTA</div>
+  <div class="subtitle">GUIDE DE DÉPLOIEMENT — RENDER.COM</div>
+
+  <div class="card">
+    <div class="grid2">
+      <div class="stat"><div class="stat-val">26MB</div><div class="stat-lbl">TAILLE PROJET</div></div>
+      <div class="stat"><div class="stat-val">46</div><div class="stat-lbl">FICHIERS</div></div>
+      <div class="stat"><div class="stat-val">3</div><div class="stat-lbl">ACTES</div></div>
+      <div class="stat"><div class="stat-val">4</div><div class="stat-lbl">FINS DIFFÉRENTES</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge badge-green">✓ Node.js 18+</span>
+    <span class="badge badge-green">✓ Express 4.18</span>
+    <span class="badge badge-cyan">✓ HTML5 Canvas</span>
+    <span class="badge badge-cyan">✓ render.yaml inclus</span>
+    <span class="badge badge-orange">→ Déploiement 1 clic</span>
+  </div>
+
+  <h2>STRUCTURE DU PROJET</h2>
+  <div class="card">
+    <div class="file-tree">
+<span class="dir">suppression-deta-game/</span><br>
+├── <span class="important">server.js</span>          ← Serveur Express<br>
+├── <span class="important">package.json</span>       ← Dépendances Node.js<br>
+├── <span class="important">render.yaml</span>        ← Config Render (auto)<br>
+├── .gitignore<br>
+├── README.md<br>
+└── <span class="dir">public/</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="important">index.html</span>     ← Jeu complet (101KB)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="dir">data/</span>              ← 25MB données jeu<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── dialogues.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── weapons.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── enemies.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── quests.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── skills.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── codex.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── particle_sim.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── color_luts.json<br>
+&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── ... (26 fichiers)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="dir">levels/</span>            ← Cartes des 3 actes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="dir">assets/images/</span>     ← SVG assets
+    </div>
+  </div>
+
+  <h2>ÉTAPE 1 — GITHUB</h2>
+  <div class="card">
+    <div class="step"><div class="step-num">1</div><div class="step-content">
+      <div class="step-title">Initialiser le dépôt Git</div>
+      <pre>cd suppression-deta-game
+git init
+git add .
+git commit -m "Suppression Déta v1.0.0 — Jeu complet"</pre>
+    </div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content">
+      <div class="step-title">Créer le repo sur GitHub</div>
+      <div class="step-desc">Sur <a href="https://github.com/new" target="_blank">github.com/new</a> — créez un repo public nommé <code>suppression-deta</code></div>
+    </div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content">
+      <div class="step-title">Pousser le code</div>
+      <pre>git remote add origin https://github.com/VOTRE_USER/suppression-deta.git
+git branch -M main
+git push -u origin main</pre>
+    </div></div>
+  </div>
+
+  <h2>ÉTAPE 2 — RENDER</h2>
+  <div class="card">
+    <div class="step"><div class="step-num">1</div><div class="step-content">
+      <div class="step-title">Créer un compte Render</div>
+      <div class="step-desc">Allez sur <a href="https://render.com" target="_blank">render.com</a> — inscription gratuite avec GitHub</div>
+    </div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content">
+      <div class="step-title">Nouveau Web Service</div>
+      <div class="step-desc">Dashboard → <strong>New +</strong> → <strong>Web Service</strong> → Connectez votre repo GitHub</div>
+    </div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content">
+      <div class="step-title">Configuration automatique</div>
+      <div class="step-desc">Le fichier <code>render.yaml</code> est détecté automatiquement. Render configure tout :</div>
+      <pre>Build: npm install
+Start: npm start
+Health: /health
+Port: 10000</pre>
+    </div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content">
+      <div class="step-title">Déployer !</div>
+      <div class="step-desc">Cliquez <strong>Create Web Service</strong>. Le build prend ~2 minutes.</div>
+      <div class="step-desc">Votre jeu sera live sur : <code>https://suppression-deta.onrender.com</code></div>
+    </div></div>
+  </div>
+
+  <h2>CONTRÔLES DU JEU</h2>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <p><code>W A S D</code> / Flèches — Déplacement</p>
+        <p><code>Shift</code> — Sprint</p>
+        <p><code>Clic gauche</code> — Tirer</p>
+        <p><code>G</code> — Déployer le gaz actif</p>
+      </div>
+      <div>
+        <p><code>H</code> — Lancer le hack neural</p>
+        <p><code>E</code> — Interagir / Dialogue</p>
+        <p><code>1 2 3 4</code> — Changer le gaz</p>
+        <p><code>Esc</code> — Pause</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p style="font-family:'Share Tech Mono',monospace;font-size:.65rem;text-align:center;color:rgba(0,229,255,.3);">
+    Suppression Déta v1.0.0 · ISBN 978-9969-521-15-3 · Maison d'Édition Ahlem · © 2026
+  </p>
+</div>
+</body>
+</html>

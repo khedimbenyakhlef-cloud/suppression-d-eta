@@ -1,0 +1,218 @@
+[
+  {
+    "id": "force_01",
+    "name": "Endurance I",
+    "branch": "force",
+    "tier": 1,
+    "desc": "+25 PV max",
+    "cost": 1,
+    "icon": "💪",
+    "prereqs": []
+  },
+  {
+    "id": "force_02",
+    "name": "Endurance II",
+    "branch": "force",
+    "tier": 2,
+    "desc": "+50 PV max",
+    "cost": 2,
+    "icon": "🛡️",
+    "prereqs": [
+      "force_01"
+    ]
+  },
+  {
+    "id": "force_03",
+    "name": "Frappe Lourde",
+    "branch": "force",
+    "tier": 1,
+    "desc": "+40% dégâts mêlée",
+    "cost": 2,
+    "icon": "⚔️",
+    "prereqs": [
+      "force_01"
+    ]
+  },
+  {
+    "id": "force_04",
+    "name": "Analyse Tactique",
+    "branch": "force",
+    "tier": 2,
+    "desc": "Ralenti temporel 5s",
+    "cost": 3,
+    "icon": "🎯",
+    "prereqs": [
+      "force_02",
+      "force_03"
+    ]
+  },
+  {
+    "id": "force_05",
+    "name": "Résistance Gaz",
+    "branch": "force",
+    "tier": 1,
+    "desc": "Immunité Gaz Rire",
+    "cost": 2,
+    "icon": "😷",
+    "prereqs": [
+      "force_01"
+    ]
+  },
+  {
+    "id": "force_06",
+    "name": "Berserker",
+    "branch": "force",
+    "tier": 3,
+    "desc": "Combo 6 hits",
+    "cost": 4,
+    "icon": "🔥",
+    "prereqs": [
+      "force_03",
+      "force_04"
+    ]
+  },
+  {
+    "id": "tech_01",
+    "name": "Hack Range I",
+    "branch": "tech",
+    "tier": 1,
+    "desc": "+20m portée",
+    "cost": 1,
+    "icon": "💻",
+    "prereqs": []
+  },
+  {
+    "id": "tech_02",
+    "name": "Hack Range II",
+    "branch": "tech",
+    "tier": 2,
+    "desc": "+40m portée",
+    "cost": 2,
+    "icon": "📡",
+    "prereqs": [
+      "tech_01"
+    ]
+  },
+  {
+    "id": "tech_03",
+    "name": "Drones Avancés",
+    "branch": "tech",
+    "tier": 2,
+    "desc": "Drone armé ×2",
+    "cost": 3,
+    "icon": "🚁",
+    "prereqs": [
+      "tech_01"
+    ]
+  },
+  {
+    "id": "tech_04",
+    "name": "Décryptage Rapide",
+    "branch": "tech",
+    "tier": 1,
+    "desc": "Timer -3s",
+    "cost": 1,
+    "icon": "⚡",
+    "prereqs": [
+      "tech_01"
+    ]
+  },
+  {
+    "id": "tech_05",
+    "name": "EMP de Zone",
+    "branch": "tech",
+    "tier": 3,
+    "desc": "Désactive tout 15m",
+    "cost": 4,
+    "icon": "💥",
+    "prereqs": [
+      "tech_02",
+      "tech_03"
+    ]
+  },
+  {
+    "id": "tech_06",
+    "name": "Ghost Mode",
+    "branch": "tech",
+    "tier": 3,
+    "desc": "Invisibilité 8s",
+    "cost": 4,
+    "icon": "👻",
+    "prereqs": [
+      "tech_02",
+      "tech_04"
+    ]
+  },
+  {
+    "id": "chem_01",
+    "name": "Fabrication I",
+    "branch": "chem",
+    "tier": 1,
+    "desc": "Crée Gaz Fumée",
+    "cost": 1,
+    "icon": "⚗️",
+    "prereqs": []
+  },
+  {
+    "id": "chem_02",
+    "name": "Fabrication II",
+    "branch": "chem",
+    "tier": 2,
+    "desc": "Crée Gaz Inerte",
+    "cost": 2,
+    "icon": "🧪",
+    "prereqs": [
+      "chem_01"
+    ]
+  },
+  {
+    "id": "chem_03",
+    "name": "Antidote",
+    "branch": "chem",
+    "tier": 1,
+    "desc": "Immunité 60s",
+    "cost": 2,
+    "icon": "💊",
+    "prereqs": [
+      "chem_01"
+    ]
+  },
+  {
+    "id": "chem_04",
+    "name": "Gaz Rire Maîtrisé",
+    "branch": "chem",
+    "tier": 3,
+    "desc": "Gaz Rire ciblé",
+    "cost": 3,
+    "icon": "😂",
+    "prereqs": [
+      "chem_02"
+    ]
+  },
+  {
+    "id": "chem_05",
+    "name": "Bombe Fumigène+",
+    "branch": "chem",
+    "tier": 2,
+    "desc": "Rayon ×3 durée ×2",
+    "cost": 3,
+    "icon": "🌫️",
+    "prereqs": [
+      "chem_01",
+      "chem_02"
+    ]
+  },
+  {
+    "id": "chem_06",
+    "name": "Alchimiste",
+    "branch": "chem",
+    "tier": 3,
+    "desc": "Mélange 2 gaz",
+    "cost": 5,
+    "icon": "🔮",
+    "prereqs": [
+      "chem_04",
+      "chem_05"
+    ]
+  }
+]

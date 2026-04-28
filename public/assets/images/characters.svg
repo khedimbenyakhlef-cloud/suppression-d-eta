@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180" width="600" height="180">
+<rect width="600" height="180" fill="#020408"/>
+<rect x="10" y="10" width="130" height="160" rx="4" fill="#0a1525" stroke="#00e5ff" stroke-width="1.5"/>
+<rect x="10" y="10" width="130" height="4" rx="2" fill="#00e5ff"/>
+<text x="75" y="85" font-size="40" text-anchor="middle">🥷</text>
+<text x="75" y="120" font-size="11" font-family="monospace" font-weight="700" fill="#00e5ff" text-anchor="middle">ALEX</text>
+<text x="75" y="140" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">MERCENAIRE</text>
+<line x1="30" y1="150" x2="120" y2="150" stroke="#00e5ff" stroke-width="0.5" opacity="0.4"/>
+<rect x="160" y="10" width="130" height="160" rx="4" fill="#1a0a30" stroke="#aa00ff" stroke-width="1.5"/>
+<rect x="160" y="10" width="130" height="4" rx="2" fill="#aa00ff"/>
+<text x="225" y="85" font-size="40" text-anchor="middle">👾</text>
+<text x="225" y="120" font-size="11" font-family="monospace" font-weight="700" fill="#aa00ff" text-anchor="middle">LANA</text>
+<text x="225" y="140" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">HACKEUSE</text>
+<line x1="180" y1="150" x2="270" y2="150" stroke="#aa00ff" stroke-width="0.5" opacity="0.4"/>
+<rect x="310" y="10" width="130" height="160" rx="4" fill="#200508" stroke="#ff1744" stroke-width="1.5"/>
+<rect x="310" y="10" width="130" height="4" rx="2" fill="#ff1744"/>
+<text x="375" y="85" font-size="40" text-anchor="middle">🎭</text>
+<text x="375" y="120" font-size="11" font-family="monospace" font-weight="700" fill="#ff1744" text-anchor="middle">LIAM</text>
+<text x="375" y="140" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">L'ADVERSAIRE</text>
+<line x1="330" y1="150" x2="420" y2="150" stroke="#ff1744" stroke-width="0.5" opacity="0.4"/>
+<rect x="460" y="10" width="130" height="160" rx="4" fill="#0a2015" stroke="#00e676" stroke-width="1.5"/>
+<rect x="460" y="10" width="130" height="4" rx="2" fill="#00e676"/>
+<text x="525" y="85" font-size="40" text-anchor="middle">🧑‍🔬</text>
+<text x="525" y="120" font-size="11" font-family="monospace" font-weight="700" fill="#00e676" text-anchor="middle">DR. FROST</text>
+<text x="525" y="140" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">CHIMISTE</text>
+<line x1="480" y1="150" x2="570" y2="150" stroke="#00e676" stroke-width="0.5" opacity="0.4"/>
+</svg>

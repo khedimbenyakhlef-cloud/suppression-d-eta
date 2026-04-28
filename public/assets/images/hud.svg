@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" width="1200" height="80">
+  <defs>
+    <linearGradient id="hp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7f0000"/>
+      <stop offset="100%" style="stop-color:#ff1744"/>
+    </linearGradient>
+    <linearGradient id="sp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00838f"/>
+      <stop offset="100%" style="stop-color:#00e5ff"/>
+    </linearGradient>
+    <linearGradient id="hk" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6200ea"/>
+      <stop offset="100%" style="stop-color:#aa00ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="80" fill="rgba(5,11,20,0.98)"/>
+  <text x="20" y="50" font-family="monospace" font-size="16" font-weight="900" fill="#00e5ff">S·DÉTA</text>
+  <!-- HP Bar -->
+  <text x="100" y="28" font-family="monospace" font-size="10" fill="#ff1744">PV</text>
+  <rect x="100" y="35" width="150" height="8" fill="rgba(255,255,255,0.06)"/>
+  <rect x="100" y="35" width="130" height="8" fill="url(#hp)"/>
+  <!-- Stamina -->
+  <text x="280" y="28" font-family="monospace" font-size="10" fill="#00e5ff">ENDURANCE</text>
+  <rect x="280" y="35" width="150" height="8" fill="rgba(255,255,255,0.06)"/>
+  <rect x="280" y="35" width="150" height="8" fill="url(#sp)"/>
+  <!-- Hack -->
+  <text x="460" y="28" font-family="monospace" font-size="10" fill="#aa00ff">HACK</text>
+  <rect x="460" y="35" width="150" height="8" fill="rgba(255,255,255,0.06)"/>
+  <rect x="460" y="35" width="120" height="8" fill="url(#hk)"/>
+  <!-- Score -->
+  <text x="1150" y="45" font-family="monospace" font-size="18" font-weight="900" fill="#ffea00" text-anchor="end">023450</text>
+</svg>

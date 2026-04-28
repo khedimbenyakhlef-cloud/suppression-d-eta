@@ -1,0 +1,3696 @@
+{
+  "entities": {
+    "guard": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "patrol_complete",
+          "to": "patrol",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "idle",
+          "condition": "alarm_active",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "gas_detected",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "idle",
+          "condition": "patrol_complete",
+          "to": "retreat",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "hacked",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "chase",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "player_in_sight",
+          "to": "stunned",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "health_low",
+          "to": "laughing",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "patrol_complete",
+          "to": "hacked",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "laughing",
+          "to": "retreat",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "alert",
+          "condition": "gas_detected",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "health_low",
+          "to": "retreat",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "health_low",
+          "to": "laughing",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "stunned",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "stunned",
+          "to": "retreat",
+          "priority": 1,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_sight",
+          "to": "laughing",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "stunned",
+          "to": "stunned",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "patrol_complete",
+          "to": "retreat",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "health_low",
+          "to": "patrol",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "laughing",
+          "to": "dead",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "dead",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "patrol_complete",
+          "to": "patrol",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "stunned",
+          "condition": "player_in_range",
+          "to": "laughing",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_sight",
+          "to": "hacked",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "laughing",
+          "to": "stunned",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "alarm_active",
+          "to": "chase",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "patrol_complete",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "laughing",
+          "condition": "laughing",
+          "to": "patrol",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "laughing",
+          "to": "retreat",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_range",
+          "to": "combat",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "idle",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "stunned",
+          "to": "retreat",
+          "priority": 3,
+          "cooldown_ms": 1000
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "attack_ranged",
+          "secondary": "laugh",
+          "animation": "guard_idle",
+          "speed_modifier": 1.1799809221609274,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "attack_melee",
+          "secondary": "scan_area",
+          "animation": "guard_patrol",
+          "speed_modifier": 0.7833928253193996,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "move_to_patrol",
+          "secondary": "scan_area",
+          "animation": "guard_alert",
+          "speed_modifier": 0.8201393582589285,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "idle_animation",
+          "secondary": "move_to_player",
+          "animation": "guard_chase",
+          "speed_modifier": 0.7734525426987454,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "scan_area",
+          "secondary": "laugh",
+          "animation": "guard_combat",
+          "speed_modifier": 1.1310770722380825,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "attack_ranged",
+          "secondary": "laugh",
+          "animation": "guard_retreat",
+          "speed_modifier": 0.7914951049099898,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "flee",
+          "secondary": "move_to_patrol",
+          "animation": "guard_stunned",
+          "speed_modifier": 1.4811427951619787,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "call_backup",
+          "secondary": "attack_melee",
+          "animation": "guard_laughing",
+          "speed_modifier": 1.327884694313752,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "attack_ranged",
+          "secondary": "attack_ranged",
+          "animation": "guard_dead",
+          "speed_modifier": 1.2004074136594354,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "move_to_patrol",
+          "secondary": "attack_melee",
+          "animation": "guard_hacked",
+          "speed_modifier": 1.3567787966691305,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 336,
+      "hear_range": 140,
+      "attack_range": 96,
+      "reaction_time_ms": 437
+    },
+    "soldier": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "patrol_complete",
+          "to": "laughing",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "hacked",
+          "to": "stunned",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "gas_detected",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "patrol",
+          "condition": "player_in_range",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "alert",
+          "condition": "laughing",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "player_in_range",
+          "to": "stunned",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "alert",
+          "condition": "player_in_range",
+          "to": "idle",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "laughing",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "patrol_complete",
+          "to": "hacked",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "stunned",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "health_low",
+          "to": "hacked",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "stunned",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "player_in_sight",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "player_in_range",
+          "to": "stunned",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "stunned",
+          "to": "dead",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "player_in_sight",
+          "to": "idle",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_sight",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "health_low",
+          "to": "idle",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "gas_detected",
+          "to": "idle",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "patrol_complete",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "gas_detected",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 10,
+          "cooldown_ms": 500
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "scan_area",
+          "secondary": "call_backup",
+          "animation": "soldier_idle",
+          "speed_modifier": 0.7773957187570043,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "scan_area",
+          "secondary": "flee",
+          "animation": "soldier_patrol",
+          "speed_modifier": 0.5743596594769403,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "deploy_cover",
+          "secondary": "deploy_cover",
+          "animation": "soldier_alert",
+          "speed_modifier": 0.8817823130620192,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "attack_melee",
+          "secondary": "flee",
+          "animation": "soldier_chase",
+          "speed_modifier": 0.9560677489880776,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "deploy_cover",
+          "secondary": "flee",
+          "animation": "soldier_combat",
+          "speed_modifier": 1.4401993281730663,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "attack_melee",
+          "secondary": "idle_animation",
+          "animation": "soldier_retreat",
+          "speed_modifier": 0.7037628968846652,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "deploy_cover",
+          "secondary": "attack_ranged",
+          "animation": "soldier_stunned",
+          "speed_modifier": 1.2144449678968061,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "scan_area",
+          "secondary": "idle_animation",
+          "animation": "soldier_laughing",
+          "speed_modifier": 1.1049446922841897,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "flee",
+          "secondary": "attack_melee",
+          "animation": "soldier_dead",
+          "speed_modifier": 0.8163603394661023,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "flee",
+          "secondary": "flee",
+          "animation": "soldier_hacked",
+          "speed_modifier": 0.5259098631442911,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 304,
+      "hear_range": 121,
+      "attack_range": 39,
+      "reaction_time_ms": 238
+    },
+    "elite": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "hacked",
+          "to": "stunned",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "laughing",
+          "to": "patrol",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "player_in_range",
+          "to": "chase",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "health_low",
+          "to": "alert",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "player_in_sight",
+          "to": "hacked",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "laughing",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "alarm_active",
+          "to": "stunned",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "hacked",
+          "to": "dead",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "alert",
+          "condition": "stunned",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_sight",
+          "to": "stunned",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_range",
+          "to": "hacked",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_range",
+          "to": "alert",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "patrol_complete",
+          "to": "patrol",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "combat",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "laughing",
+          "to": "laughing",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "hacked",
+          "to": "dead",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "hacked",
+          "to": "hacked",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "alarm_active",
+          "to": "dead",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "laughing",
+          "to": "dead",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "gas_detected",
+          "to": "hacked",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_range",
+          "to": "retreat",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_range",
+          "to": "stunned",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "laughing",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "laughing",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "laughing",
+          "priority": 6,
+          "cooldown_ms": 1000
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "call_backup",
+          "secondary": "move_to_player",
+          "animation": "elite_idle",
+          "speed_modifier": 0.5051544111201293,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "attack_melee",
+          "secondary": "flee",
+          "animation": "elite_patrol",
+          "speed_modifier": 0.8545323238437156,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "move_to_player",
+          "secondary": "flee",
+          "animation": "elite_alert",
+          "speed_modifier": 0.9920461192544134,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "move_to_player",
+          "secondary": "idle_animation",
+          "animation": "elite_chase",
+          "speed_modifier": 1.0143185995408144,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "attack_melee",
+          "secondary": "flee",
+          "animation": "elite_combat",
+          "speed_modifier": 0.623842648514428,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "laugh",
+          "secondary": "move_to_patrol",
+          "animation": "elite_retreat",
+          "speed_modifier": 0.6556304005492299,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "deploy_cover",
+          "secondary": "attack_ranged",
+          "animation": "elite_stunned",
+          "speed_modifier": 0.9706986799490364,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "call_backup",
+          "secondary": "deploy_cover",
+          "animation": "elite_laughing",
+          "speed_modifier": 0.8644956978286912,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "attack_melee",
+          "secondary": "idle_animation",
+          "animation": "elite_dead",
+          "speed_modifier": 1.3115438540986304,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "move_to_player",
+          "secondary": "laugh",
+          "animation": "elite_hacked",
+          "speed_modifier": 1.1562796446633148,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 262,
+      "hear_range": 110,
+      "attack_range": 55,
+      "reaction_time_ms": 281
+    },
+    "drone_scout": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "player_in_sight",
+          "to": "alert",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "alarm_active",
+          "to": "retreat",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "idle",
+          "condition": "laughing",
+          "to": "chase",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "health_low",
+          "to": "dead",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "stunned",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "gas_detected",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "retreat",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "player_in_sight",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "alert",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 5,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "gas_detected",
+          "to": "laughing",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "stunned",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_range",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "laughing",
+          "to": "alert",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "patrol_complete",
+          "to": "stunned",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "stunned",
+          "to": "dead",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "player_in_sight",
+          "to": "chase",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "gas_detected",
+          "to": "alert",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "patrol_complete",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "laughing",
+          "to": "combat",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "health_low",
+          "to": "retreat",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_sight",
+          "to": "alert",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "laughing",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "stunned",
+          "to": "patrol",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "health_low",
+          "to": "patrol",
+          "priority": 1,
+          "cooldown_ms": 500
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "attack_ranged",
+          "secondary": "laugh",
+          "animation": "drone_scout_idle",
+          "speed_modifier": 1.425500639517884,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "move_to_player",
+          "secondary": "idle_animation",
+          "animation": "drone_scout_patrol",
+          "speed_modifier": 1.1190103690542128,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "deploy_cover",
+          "secondary": "laugh",
+          "animation": "drone_scout_alert",
+          "speed_modifier": 1.4896446150614917,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "attack_ranged",
+          "secondary": "idle_animation",
+          "animation": "drone_scout_chase",
+          "speed_modifier": 1.2207694661145831,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "move_to_patrol",
+          "secondary": "attack_melee",
+          "animation": "drone_scout_combat",
+          "speed_modifier": 0.6917067275808196,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "idle_animation",
+          "secondary": "deploy_cover",
+          "animation": "drone_scout_retreat",
+          "speed_modifier": 1.3915866529723653,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "idle_animation",
+          "secondary": "call_backup",
+          "animation": "drone_scout_stunned",
+          "speed_modifier": 1.3949130279273692,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "laugh",
+          "secondary": "move_to_player",
+          "animation": "drone_scout_laughing",
+          "speed_modifier": 1.4108491795966458,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "move_to_player",
+          "secondary": "laugh",
+          "animation": "drone_scout_dead",
+          "speed_modifier": 0.9190041610878911,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "idle_animation",
+          "secondary": "move_to_patrol",
+          "animation": "drone_scout_hacked",
+          "speed_modifier": 0.6669351279672507,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 220,
+      "hear_range": 179,
+      "attack_range": 53,
+      "reaction_time_ms": 248
+    },
+    "drone_combat": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "player_in_sight",
+          "to": "dead",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "stunned",
+          "to": "alert",
+          "priority": 10,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "alert",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "alarm_active",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_range",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_sight",
+          "to": "hacked",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "gas_detected",
+          "to": "patrol",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "gas_detected",
+          "to": "idle",
+          "priority": 1,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "stunned",
+          "to": "chase",
+          "priority": 5,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "patrol_complete",
+          "to": "laughing",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "stunned",
+          "to": "alert",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "player_in_range",
+          "to": "retreat",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_range",
+          "to": "patrol",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_range",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "stunned",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "gas_detected",
+          "to": "alert",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_sight",
+          "to": "combat",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_sight",
+          "to": "idle",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "patrol_complete",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 2000
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "attack_melee",
+          "secondary": "deploy_cover",
+          "animation": "drone_combat_idle",
+          "speed_modifier": 0.8317563196935384,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "attack_melee",
+          "secondary": "attack_ranged",
+          "animation": "drone_combat_patrol",
+          "speed_modifier": 0.5558755065763475,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "deploy_cover",
+          "secondary": "idle_animation",
+          "animation": "drone_combat_alert",
+          "speed_modifier": 0.6230755151898257,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "move_to_patrol",
+          "secondary": "move_to_player",
+          "animation": "drone_combat_chase",
+          "speed_modifier": 1.044642100458879,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "move_to_player",
+          "secondary": "idle_animation",
+          "animation": "drone_combat_combat",
+          "speed_modifier": 1.3864568683243048,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "flee",
+          "secondary": "attack_melee",
+          "animation": "drone_combat_retreat",
+          "speed_modifier": 0.501210420669369,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "attack_ranged",
+          "secondary": "move_to_patrol",
+          "animation": "drone_combat_stunned",
+          "speed_modifier": 0.7266751410598712,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "flee",
+          "secondary": "attack_melee",
+          "animation": "drone_combat_laughing",
+          "speed_modifier": 0.853309911901985,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "deploy_cover",
+          "secondary": "attack_ranged",
+          "animation": "drone_combat_dead",
+          "speed_modifier": 1.421690917603598,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "flee",
+          "secondary": "move_to_player",
+          "animation": "drone_combat_hacked",
+          "speed_modifier": 0.991820575070076,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 178,
+      "hear_range": 118,
+      "attack_range": 46,
+      "reaction_time_ms": 244
+    },
+    "heavy": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "idle",
+          "condition": "gas_detected",
+          "to": "alert",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "gas_detected",
+          "to": "hacked",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "patrol_complete",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "alarm_active",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "health_low",
+          "to": "alert",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "patrol",
+          "condition": "gas_detected",
+          "to": "laughing",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "patrol_complete",
+          "to": "stunned",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "health_low",
+          "to": "laughing",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "alert",
+          "condition": "player_in_sight",
+          "to": "stunned",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "player_in_range",
+          "to": "chase",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "hacked",
+          "to": "stunned",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "hacked",
+          "to": "patrol",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "health_low",
+          "to": "retreat",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_sight",
+          "to": "alert",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "gas_detected",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "alarm_active",
+          "to": "chase",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "combat",
+          "condition": "alarm_active",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_range",
+          "to": "alert",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "gas_detected",
+          "to": "alert",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "stunned",
+          "to": "alert",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "alert",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "laughing",
+          "to": "retreat",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "alarm_active",
+          "to": "alert",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_sight",
+          "to": "idle",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "hacked",
+          "to": "stunned",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "patrol_complete",
+          "to": "alert",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "hacked",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "laughing",
+          "to": "stunned",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "hacked",
+          "to": "retreat",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "stunned",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "gas_detected",
+          "to": "patrol",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "gas_detected",
+          "to": "idle",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_sight",
+          "to": "alert",
+          "priority": 9,
+          "cooldown_ms": 0
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "move_to_player",
+          "secondary": "attack_ranged",
+          "animation": "heavy_idle",
+          "speed_modifier": 1.0971107558233812,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "deploy_cover",
+          "secondary": "attack_ranged",
+          "animation": "heavy_patrol",
+          "speed_modifier": 1.0516913771757923,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "move_to_patrol",
+          "secondary": "attack_ranged",
+          "animation": "heavy_alert",
+          "speed_modifier": 0.7691680124777507,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "scan_area",
+          "secondary": "scan_area",
+          "animation": "heavy_chase",
+          "speed_modifier": 0.5448745382110723,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "laugh",
+          "secondary": "move_to_patrol",
+          "animation": "heavy_combat",
+          "speed_modifier": 0.5480489009214959,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "move_to_player",
+          "secondary": "deploy_cover",
+          "animation": "heavy_retreat",
+          "speed_modifier": 0.5084787307720007,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "call_backup",
+          "secondary": "deploy_cover",
+          "animation": "heavy_stunned",
+          "speed_modifier": 1.4587390228967099,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "idle_animation",
+          "secondary": "attack_ranged",
+          "animation": "heavy_laughing",
+          "speed_modifier": 0.8144724425065686,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "flee",
+          "secondary": "call_backup",
+          "animation": "heavy_dead",
+          "speed_modifier": 1.4738507429474361,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "move_to_player",
+          "secondary": "call_backup",
+          "animation": "heavy_hacked",
+          "speed_modifier": 0.9072865612544951,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 339,
+      "hear_range": 154,
+      "attack_range": 45,
+      "reaction_time_ms": 357
+    },
+    "sniper": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "alarm_active",
+          "to": "combat",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "idle",
+          "condition": "hacked",
+          "to": "laughing",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "alarm_active",
+          "to": "alert",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "stunned",
+          "to": "combat",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "alert",
+          "condition": "patrol_complete",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "alert",
+          "condition": "laughing",
+          "to": "hacked",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "stunned",
+          "to": "idle",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "patrol_complete",
+          "to": "dead",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "patrol_complete",
+          "to": "retreat",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_range",
+          "to": "patrol",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "patrol_complete",
+          "to": "hacked",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "gas_detected",
+          "to": "combat",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "patrol_complete",
+          "to": "hacked",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "gas_detected",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "laughing",
+          "to": "chase",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_sight",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_range",
+          "to": "retreat",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_sight",
+          "to": "retreat",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "gas_detected",
+          "to": "combat",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 2000
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "laugh",
+          "secondary": "attack_ranged",
+          "animation": "sniper_idle",
+          "speed_modifier": 0.554077515091694,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "move_to_patrol",
+          "secondary": "flee",
+          "animation": "sniper_patrol",
+          "speed_modifier": 0.7698481101697033,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "attack_melee",
+          "secondary": "move_to_player",
+          "animation": "sniper_alert",
+          "speed_modifier": 0.6417378937397826,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "deploy_cover",
+          "secondary": "flee",
+          "animation": "sniper_chase",
+          "speed_modifier": 0.5817091114695131,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "laugh",
+          "secondary": "flee",
+          "animation": "sniper_combat",
+          "speed_modifier": 1.024777943000979,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "deploy_cover",
+          "secondary": "attack_melee",
+          "animation": "sniper_retreat",
+          "speed_modifier": 1.330549091501104,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "move_to_player",
+          "secondary": "flee",
+          "animation": "sniper_stunned",
+          "speed_modifier": 0.8420191478980017,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "deploy_cover",
+          "secondary": "attack_melee",
+          "animation": "sniper_laughing",
+          "speed_modifier": 0.6986053090488631,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "flee",
+          "secondary": "laugh",
+          "animation": "sniper_dead",
+          "speed_modifier": 0.9754994178973606,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "attack_melee",
+          "secondary": "flee",
+          "animation": "sniper_hacked",
+          "speed_modifier": 0.8546923764988617,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 327,
+      "hear_range": 163,
+      "attack_range": 119,
+      "reaction_time_ms": 105
+    },
+    "counter_hacker": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "player_in_sight",
+          "to": "retreat",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "idle",
+          "condition": "laughing",
+          "to": "alert",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "idle",
+          "condition": "stunned",
+          "to": "laughing",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "health_low",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "idle",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "patrol_complete",
+          "to": "stunned",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "patrol_complete",
+          "to": "hacked",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "alarm_active",
+          "to": "retreat",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "alert",
+          "condition": "gas_detected",
+          "to": "combat",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "gas_detected",
+          "to": "laughing",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "gas_detected",
+          "to": "alert",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "alarm_active",
+          "to": "retreat",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "gas_detected",
+          "to": "dead",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "patrol_complete",
+          "to": "combat",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "gas_detected",
+          "to": "hacked",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_sight",
+          "to": "stunned",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_sight",
+          "to": "hacked",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "hacked",
+          "to": "laughing",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "laughing",
+          "to": "patrol",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "stunned",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "hacked",
+          "to": "combat",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "idle",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "stunned",
+          "to": "idle",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "alarm_active",
+          "to": "alert",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "laughing",
+          "to": "chase",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "health_low",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "patrol_complete",
+          "to": "stunned",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "laughing",
+          "to": "alert",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "alarm_active",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "stunned",
+          "to": "idle",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 1,
+          "cooldown_ms": 0
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "flee",
+          "secondary": "move_to_patrol",
+          "animation": "counter_hacker_idle",
+          "speed_modifier": 1.2423396239740339,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "attack_melee",
+          "secondary": "laugh",
+          "animation": "counter_hacker_patrol",
+          "speed_modifier": 1.134463151033981,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "call_backup",
+          "secondary": "attack_melee",
+          "animation": "counter_hacker_alert",
+          "speed_modifier": 0.7397218842247331,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "attack_ranged",
+          "secondary": "deploy_cover",
+          "animation": "counter_hacker_chase",
+          "speed_modifier": 0.6938289145783872,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "attack_ranged",
+          "secondary": "flee",
+          "animation": "counter_hacker_combat",
+          "speed_modifier": 1.2703915853834131,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "move_to_patrol",
+          "secondary": "deploy_cover",
+          "animation": "counter_hacker_retreat",
+          "speed_modifier": 0.582963369302272,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "attack_melee",
+          "secondary": "move_to_patrol",
+          "animation": "counter_hacker_stunned",
+          "speed_modifier": 1.138386569803937,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "scan_area",
+          "secondary": "move_to_player",
+          "animation": "counter_hacker_laughing",
+          "speed_modifier": 0.6109315191144326,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "scan_area",
+          "secondary": "move_to_player",
+          "animation": "counter_hacker_dead",
+          "speed_modifier": 0.6070766534047974,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "deploy_cover",
+          "secondary": "deploy_cover",
+          "animation": "counter_hacker_hacked",
+          "speed_modifier": 1.394604788576273,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 173,
+      "hear_range": 99,
+      "attack_range": 146,
+      "reaction_time_ms": 285
+    },
+    "riot_cop": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "gas_detected",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "idle",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 7,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "idle",
+          "condition": "player_in_sight",
+          "to": "retreat",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "patrol",
+          "condition": "health_low",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "patrol_complete",
+          "to": "retreat",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "patrol",
+          "condition": "stunned",
+          "to": "hacked",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "hacked",
+          "to": "hacked",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "health_low",
+          "to": "dead",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "alert",
+          "condition": "player_in_range",
+          "to": "chase",
+          "priority": 6,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_sight",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_range",
+          "to": "laughing",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_sight",
+          "to": "retreat",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "laughing",
+          "to": "alert",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "stunned",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_range",
+          "to": "hacked",
+          "priority": 5,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "stunned",
+          "to": "hacked",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "retreat",
+          "condition": "gas_detected",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_sight",
+          "to": "patrol",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_range",
+          "to": "retreat",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "health_low",
+          "to": "patrol",
+          "priority": 1,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "alarm_active",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "stunned",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "dead",
+          "condition": "gas_detected",
+          "to": "hacked",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "stunned",
+          "to": "stunned",
+          "priority": 6,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "combat",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 500
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "call_backup",
+          "secondary": "scan_area",
+          "animation": "riot_cop_idle",
+          "speed_modifier": 0.8828575181694471,
+          "damage_modifier": 1.0
+        },
+        "patrol": {
+          "primary": "scan_area",
+          "secondary": "move_to_patrol",
+          "animation": "riot_cop_patrol",
+          "speed_modifier": 0.7850369141834698,
+          "damage_modifier": 1.0
+        },
+        "alert": {
+          "primary": "scan_area",
+          "secondary": "move_to_patrol",
+          "animation": "riot_cop_alert",
+          "speed_modifier": 1.4116431434584547,
+          "damage_modifier": 1.0
+        },
+        "chase": {
+          "primary": "deploy_cover",
+          "secondary": "attack_melee",
+          "animation": "riot_cop_chase",
+          "speed_modifier": 1.3416428638015208,
+          "damage_modifier": 1.0
+        },
+        "combat": {
+          "primary": "flee",
+          "secondary": "move_to_patrol",
+          "animation": "riot_cop_combat",
+          "speed_modifier": 1.3958295250942334,
+          "damage_modifier": 1.0
+        },
+        "retreat": {
+          "primary": "idle_animation",
+          "secondary": "move_to_patrol",
+          "animation": "riot_cop_retreat",
+          "speed_modifier": 0.8373898688314532,
+          "damage_modifier": 1.0
+        },
+        "stunned": {
+          "primary": "move_to_patrol",
+          "secondary": "move_to_player",
+          "animation": "riot_cop_stunned",
+          "speed_modifier": 0.9698933519059405,
+          "damage_modifier": 1.0
+        },
+        "laughing": {
+          "primary": "flee",
+          "secondary": "deploy_cover",
+          "animation": "riot_cop_laughing",
+          "speed_modifier": 0.7746735462336961,
+          "damage_modifier": 1.0
+        },
+        "dead": {
+          "primary": "call_backup",
+          "secondary": "flee",
+          "animation": "riot_cop_dead",
+          "speed_modifier": 0.5797672089669867,
+          "damage_modifier": 1.0
+        },
+        "hacked": {
+          "primary": "call_backup",
+          "secondary": "laugh",
+          "animation": "riot_cop_hacked",
+          "speed_modifier": 1.112320646994358,
+          "damage_modifier": 1.0
+        }
+      },
+      "sight_range": 250,
+      "hear_range": 128,
+      "attack_range": 198,
+      "reaction_time_ms": 332
+    },
+    "liam_p1": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "patrol_complete",
+          "to": "chase",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "idle",
+          "condition": "player_in_range",
+          "to": "alert",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "idle",
+          "condition": "stunned",
+          "to": "patrol",
+          "priority": 4,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "patrol_complete",
+          "to": "combat",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "alarm_active",
+          "to": "idle",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "alarm_active",
+          "to": "hacked",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "alarm_active",
+          "to": "stunned",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "chase",
+          "condition": "laughing",
+          "to": "dead",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "alarm_active",
+          "to": "hacked",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "patrol_complete",
+          "to": "combat",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "player_in_sight",
+          "to": "retreat",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "combat",
+          "condition": "laughing",
+          "to": "chase",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "laughing",
+          "to": "laughing",
+          "priority": 1,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "laughing",
+          "to": "stunned",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "hacked",
+          "to": "patrol",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "laughing",
+          "to": "dead",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "chase",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "stunned",
+          "condition": "hacked",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_sight",
+          "to": "hacked",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "laughing",
+          "condition": "laughing",
+          "to": "patrol",
+          "priority": 2,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "patrol_complete",
+          "to": "idle",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_range",
+          "to": "retreat",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "gas_detected",
+          "to": "stunned",
+          "priority": 9,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "player_in_range",
+          "to": "dead",
+          "priority": 6,
+          "cooldown_ms": 0
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "laugh",
+          "secondary": "deploy_cover",
+          "animation": "liam_p1_idle",
+          "speed_modifier": 0.8697806753055207,
+          "damage_modifier": 0.8343940805944444
+        },
+        "patrol": {
+          "primary": "flee",
+          "secondary": "flee",
+          "animation": "liam_p1_patrol",
+          "speed_modifier": 0.6939316264838419,
+          "damage_modifier": 0.9326147435745931
+        },
+        "alert": {
+          "primary": "attack_melee",
+          "secondary": "scan_area",
+          "animation": "liam_p1_alert",
+          "speed_modifier": 0.7759256998416986,
+          "damage_modifier": 1.2252136941666256
+        },
+        "chase": {
+          "primary": "idle_animation",
+          "secondary": "flee",
+          "animation": "liam_p1_chase",
+          "speed_modifier": 0.6091845607844034,
+          "damage_modifier": 0.8349100146624551
+        },
+        "combat": {
+          "primary": "attack_ranged",
+          "secondary": "move_to_player",
+          "animation": "liam_p1_combat",
+          "speed_modifier": 0.7195797645687155,
+          "damage_modifier": 0.8371964397023687
+        },
+        "retreat": {
+          "primary": "move_to_patrol",
+          "secondary": "scan_area",
+          "animation": "liam_p1_retreat",
+          "speed_modifier": 0.7661782446411783,
+          "damage_modifier": 0.8460931701398805
+        },
+        "stunned": {
+          "primary": "move_to_player",
+          "secondary": "deploy_cover",
+          "animation": "liam_p1_stunned",
+          "speed_modifier": 0.7264650157287738,
+          "damage_modifier": 1.234154518616636
+        },
+        "laughing": {
+          "primary": "flee",
+          "secondary": "flee",
+          "animation": "liam_p1_laughing",
+          "speed_modifier": 0.8928854249514957,
+          "damage_modifier": 0.953921808404826
+        },
+        "dead": {
+          "primary": "deploy_cover",
+          "secondary": "laugh",
+          "animation": "liam_p1_dead",
+          "speed_modifier": 0.70570537575356,
+          "damage_modifier": 1.3500093560107262
+        },
+        "hacked": {
+          "primary": "call_backup",
+          "secondary": "deploy_cover",
+          "animation": "liam_p1_hacked",
+          "speed_modifier": 1.2058533474528297,
+          "damage_modifier": 1.0015850425788582
+        }
+      },
+      "sight_range": 150,
+      "hear_range": 102,
+      "attack_range": 67,
+      "reaction_time_ms": 357
+    },
+    "liam_p2": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "laughing",
+          "to": "alert",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "idle",
+          "condition": "laughing",
+          "to": "laughing",
+          "priority": 7,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "idle",
+          "condition": "laughing",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "alert",
+          "condition": "alarm_active",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_sight",
+          "to": "retreat",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "alarm_active",
+          "to": "retreat",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "combat",
+          "condition": "health_low",
+          "to": "dead",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "alarm_active",
+          "to": "alert",
+          "priority": 7,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "combat",
+          "condition": "health_low",
+          "to": "alert",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "combat",
+          "condition": "gas_detected",
+          "to": "idle",
+          "priority": 4,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "player_in_range",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "player_in_sight",
+          "to": "dead",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "stunned",
+          "condition": "stunned",
+          "to": "retreat",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "health_low",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "stunned",
+          "condition": "player_in_range",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "stunned",
+          "condition": "stunned",
+          "to": "laughing",
+          "priority": 3,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 5,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "stunned",
+          "to": "idle",
+          "priority": 8,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "health_low",
+          "to": "combat",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "stunned",
+          "to": "retreat",
+          "priority": 1,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_sight",
+          "to": "combat",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "patrol_complete",
+          "to": "combat",
+          "priority": 4,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "hacked",
+          "condition": "stunned",
+          "to": "laughing",
+          "priority": 6,
+          "cooldown_ms": 500
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "flee",
+          "secondary": "flee",
+          "animation": "liam_p2_idle",
+          "speed_modifier": 0.8991136026897043,
+          "damage_modifier": 1.4329139774195632
+        },
+        "patrol": {
+          "primary": "deploy_cover",
+          "secondary": "deploy_cover",
+          "animation": "liam_p2_patrol",
+          "speed_modifier": 1.0970387928987726,
+          "damage_modifier": 0.9213113784397791
+        },
+        "alert": {
+          "primary": "flee",
+          "secondary": "call_backup",
+          "animation": "liam_p2_alert",
+          "speed_modifier": 1.3043802498144463,
+          "damage_modifier": 0.8974234512323501
+        },
+        "chase": {
+          "primary": "attack_ranged",
+          "secondary": "deploy_cover",
+          "animation": "liam_p2_chase",
+          "speed_modifier": 0.6356907517933271,
+          "damage_modifier": 1.1879986385976242
+        },
+        "combat": {
+          "primary": "deploy_cover",
+          "secondary": "deploy_cover",
+          "animation": "liam_p2_combat",
+          "speed_modifier": 0.5855979271034459,
+          "damage_modifier": 1.1966655630542564
+        },
+        "retreat": {
+          "primary": "laugh",
+          "secondary": "idle_animation",
+          "animation": "liam_p2_retreat",
+          "speed_modifier": 0.683372172534212,
+          "damage_modifier": 1.3476840131964165
+        },
+        "stunned": {
+          "primary": "flee",
+          "secondary": "move_to_player",
+          "animation": "liam_p2_stunned",
+          "speed_modifier": 0.638609875191535,
+          "damage_modifier": 1.1093309319458409
+        },
+        "laughing": {
+          "primary": "call_backup",
+          "secondary": "idle_animation",
+          "animation": "liam_p2_laughing",
+          "speed_modifier": 1.4348798147228603,
+          "damage_modifier": 1.2988189537099846
+        },
+        "dead": {
+          "primary": "laugh",
+          "secondary": "call_backup",
+          "animation": "liam_p2_dead",
+          "speed_modifier": 0.9276691709947031,
+          "damage_modifier": 1.0943539654688004
+        },
+        "hacked": {
+          "primary": "flee",
+          "secondary": "laugh",
+          "animation": "liam_p2_hacked",
+          "speed_modifier": 0.5276729383510224,
+          "damage_modifier": 1.1912363724298438
+        }
+      },
+      "sight_range": 346,
+      "hear_range": 143,
+      "attack_range": 42,
+      "reaction_time_ms": 486
+    },
+    "liam_p3": {
+      "initial_state": "patrol",
+      "states": [
+        "idle",
+        "patrol",
+        "alert",
+        "chase",
+        "combat",
+        "retreat",
+        "stunned",
+        "laughing",
+        "dead",
+        "hacked"
+      ],
+      "transitions": [
+        {
+          "from": "idle",
+          "condition": "stunned",
+          "to": "dead",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "idle",
+          "condition": "health_low",
+          "to": "hacked",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "player_in_range",
+          "to": "idle",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "combat",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "hacked",
+          "to": "hacked",
+          "priority": 2,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "laughing",
+          "to": "hacked",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "patrol",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 2,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "alert",
+          "condition": "stunned",
+          "to": "chase",
+          "priority": 3,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "alert",
+          "condition": "patrol_complete",
+          "to": "combat",
+          "priority": 1,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "chase",
+          "condition": "player_in_range",
+          "to": "patrol",
+          "priority": 9,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "hacked",
+          "to": "laughing",
+          "priority": 7,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "combat",
+          "condition": "alarm_active",
+          "to": "patrol",
+          "priority": 5,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "retreat",
+          "condition": "patrol_complete",
+          "to": "laughing",
+          "priority": 10,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "stunned",
+          "priority": 3,
+          "cooldown_ms": 0
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "alert",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "hacked",
+          "to": "alert",
+          "priority": 9,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "retreat",
+          "condition": "alarm_active",
+          "to": "laughing",
+          "priority": 8,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "stunned",
+          "condition": "hacked",
+          "to": "patrol",
+          "priority": 8,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "player_in_sight",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "laughing",
+          "condition": "hacked",
+          "to": "idle",
+          "priority": 10,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "laughing",
+          "condition": "stunned",
+          "to": "idle",
+          "priority": 6,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "hacked",
+          "to": "chase",
+          "priority": 6,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "dead",
+          "condition": "player_in_range",
+          "to": "patrol",
+          "priority": 3,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "dead",
+          "condition": "hacked",
+          "to": "retreat",
+          "priority": 10,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "laughing",
+          "to": "stunned",
+          "priority": 2,
+          "cooldown_ms": 2000
+        },
+        {
+          "from": "hacked",
+          "condition": "alarm_active",
+          "to": "stunned",
+          "priority": 8,
+          "cooldown_ms": 500
+        },
+        {
+          "from": "hacked",
+          "condition": "laughing",
+          "to": "dead",
+          "priority": 9,
+          "cooldown_ms": 1000
+        },
+        {
+          "from": "hacked",
+          "condition": "health_low",
+          "to": "alert",
+          "priority": 6,
+          "cooldown_ms": 1000
+        }
+      ],
+      "action_map": {
+        "idle": {
+          "primary": "scan_area",
+          "secondary": "scan_area",
+          "animation": "liam_p3_idle",
+          "speed_modifier": 1.3298862681073982,
+          "damage_modifier": 0.84729897999354
+        },
+        "patrol": {
+          "primary": "move_to_patrol",
+          "secondary": "attack_melee",
+          "animation": "liam_p3_patrol",
+          "speed_modifier": 0.7317043103019926,
+          "damage_modifier": 1.265682679968732
+        },
+        "alert": {
+          "primary": "laugh",
+          "secondary": "laugh",
+          "animation": "liam_p3_alert",
+          "speed_modifier": 0.8236593809717094,
+          "damage_modifier": 0.9620741992215058
+        },
+        "chase": {
+          "primary": "attack_ranged",
+          "secondary": "move_to_player",
+          "animation": "liam_p3_chase",
+          "speed_modifier": 1.3997943094429033,
+          "damage_modifier": 0.9217985712715552
+        },
+        "combat": {
+          "primary": "flee",
+          "secondary": "flee",
+          "animation": "liam_p3_combat",
+          "speed_modifier": 1.422375798704996,
+          "damage_modifier": 0.8433486515904407
+        },
+        "retreat": {
+          "primary": "deploy_cover",
+          "secondary": "move_to_player",
+          "animation": "liam_p3_retreat",
+          "speed_modifier": 0.5374182749301333,
+          "damage_modifier": 1.324954459451267
+        },
+        "stunned": {
+          "primary": "laugh",
+          "secondary": "call_backup",
+          "animation": "liam_p3_stunned",
+          "speed_modifier": 1.1065333011097762,
+          "damage_modifier": 1.3884755486296236
+        },
+        "laughing": {
+          "primary": "attack_melee",
+          "secondary": "call_backup",
+          "animation": "liam_p3_laughing",
+          "speed_modifier": 0.6076610065901705,
+          "damage_modifier": 1.1146567416514475
+        },
+        "dead": {
+          "primary": "attack_melee",
+          "secondary": "scan_area",
+          "animation": "liam_p3_dead",
+          "speed_modifier": 1.0564682200531246,
+          "damage_modifier": 0.9370025633033101
+        },
+        "hacked": {
+          "primary": "laugh",
+          "secondary": "laugh",
+          "animation": "liam_p3_hacked",
+          "speed_modifier": 1.1788490212417344,
+          "damage_modifier": 0.9578475776376942
+        }
+      },
+      "sight_range": 339,
+      "hear_range": 110,
+      "attack_range": 131,
+      "reaction_time_ms": 370
+    }
+  }
+}

@@ -1,0 +1,3481 @@
+{
+  "name_pools": {
+    "algerian_male": [
+      "Amir",
+      "Karim",
+      "Hamza",
+      "Omar",
+      "Youcef",
+      "Bilal",
+      "Amine",
+      "Samir",
+      "Mehdi",
+      "Nassim",
+      "Rafik",
+      "Tarek",
+      "Adel",
+      "Fares",
+      "Nour"
+    ],
+    "algerian_female": [
+      "Lana",
+      "Amira",
+      "Nadia",
+      "Sonia",
+      "Yasmine",
+      "Farida",
+      "Sabrina",
+      "Leila",
+      "Rania",
+      "Djamila",
+      "Houria",
+      "Sihem",
+      "Asma",
+      "Inès",
+      "Meriem"
+    ],
+    "codenames": [
+      "Spectre",
+      "Ghost",
+      "Cipher",
+      "Nova",
+      "Delta",
+      "Echo",
+      "Zero",
+      "Vortex",
+      "Phoenix",
+      "Shade",
+      "Mirage",
+      "Nexus",
+      "Vector",
+      "Apex",
+      "Storm"
+    ],
+    "district_names": [
+      "Secteur Alpha",
+      "Nova Marché",
+      "Port Industriel",
+      "Zone Chimique",
+      "Les Souterrains",
+      "L'Ancien Alger",
+      "Tour Déta",
+      "Résidence Karim",
+      "Zone 7",
+      "Banlieue Est"
+    ]
+  },
+  "random_events": [
+    {
+      "id": "event_000",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant L'Ancien Alger. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.2193041525791341,
+      "triggers": [
+        "rep",
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 2,
+        "score": 103
+      },
+      "duration_minutes": 20,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_001",
+      "type": "black_market",
+      "description": "Marché noir actif dans Nova Marché ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.09578148563524069,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -1,
+        "score": 200
+      },
+      "duration_minutes": 30,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_002",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans L'Ancien Alger. Un informateur veut vous parler.",
+      "spawn_probability": 0.2403049291449162,
+      "triggers": [
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 7,
+        "score": 69
+      },
+      "duration_minutes": 22,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_003",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Les Souterrains. 37 civils évacués.",
+      "spawn_probability": 0.20474515303793867,
+      "triggers": [
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 1,
+        "score": 278
+      },
+      "duration_minutes": 14,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_004",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Zone Chimique. Un informateur veut vous parler.",
+      "spawn_probability": 0.1299825093131496,
+      "triggers": [
+        "act",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 13,
+        "score": 214
+      },
+      "duration_minutes": 10,
+      "exclusive_with": [
+        "event_091"
+      ]
+    },
+    {
+      "id": "event_005",
+      "type": "black_market",
+      "description": "Marché noir actif dans Port Industriel ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.10004501004950539,
+      "triggers": [
+        "kills",
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 18,
+        "score": 210
+      },
+      "duration_minutes": 8,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_006",
+      "type": "gas_leak",
+      "description": "Une fuite de Fumée dans Secteur Alpha. 173 civils évacués.",
+      "spawn_probability": 0.08653662173447865,
+      "triggers": [
+        "kills",
+        "kills",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 0,
+        "score": 101
+      },
+      "duration_minutes": 23,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_007",
+      "type": "black_market",
+      "description": "Marché noir actif dans Secteur Alpha ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.08581976491183932,
+      "triggers": [
+        "kills",
+        "act",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 5,
+        "score": 85
+      },
+      "duration_minutes": 7,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_008",
+      "type": "civilian_riot",
+      "description": "Les habitants de Secteur Alpha se révoltent contre la taxe eau.",
+      "spawn_probability": 0.0662799387151583,
+      "triggers": [
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -2,
+        "score": 124
+      },
+      "duration_minutes": 29,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_009",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans L'Ancien Alger.",
+      "spawn_probability": 0.21866815943004203,
+      "triggers": [
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 20,
+        "score": 146
+      },
+      "duration_minutes": 10,
+      "exclusive_with": [
+        "event_049"
+      ]
+    },
+    {
+      "id": "event_010",
+      "type": "civilian_riot",
+      "description": "Les habitants de L'Ancien Alger se révoltent contre la taxe eau.",
+      "spawn_probability": 0.13614308257635999,
+      "triggers": [
+        "act",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -9,
+        "score": 288
+      },
+      "duration_minutes": 15,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_011",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Secteur Alpha. 49 civils évacués.",
+      "spawn_probability": 0.23982770280709398,
+      "triggers": [
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -10,
+        "score": 464
+      },
+      "duration_minutes": 24,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_012",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Port Industriel. Un informateur veut vous parler.",
+      "spawn_probability": 0.16419095989211557,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 16,
+        "score": 86
+      },
+      "duration_minutes": 6,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_013",
+      "type": "black_market",
+      "description": "Marché noir actif dans Port Industriel ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.06562882377671159,
+      "triggers": [
+        "kills",
+        "act",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -7,
+        "score": 412
+      },
+      "duration_minutes": 21,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_014",
+      "type": "gas_leak",
+      "description": "Une fuite de Inferno dans L'Ancien Alger. 98 civils évacués.",
+      "spawn_probability": 0.21235949930686654,
+      "triggers": [
+        "rep",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 13,
+        "score": 206
+      },
+      "duration_minutes": 25,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_015",
+      "type": "gas_leak",
+      "description": "Une fuite de Inferno dans L'Ancien Alger. 127 civils évacués.",
+      "spawn_probability": 0.08834096992837714,
+      "triggers": [
+        "act",
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -4,
+        "score": 152
+      },
+      "duration_minutes": 24,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_016",
+      "type": "black_market",
+      "description": "Marché noir actif dans L'Ancien Alger ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.06673668862155753,
+      "triggers": [
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -9,
+        "score": 234
+      },
+      "duration_minutes": 7,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_017",
+      "type": "civilian_riot",
+      "description": "Les habitants de Les Souterrains se révoltent contre la taxe eau.",
+      "spawn_probability": 0.1700338548384992,
+      "triggers": [
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -3,
+        "score": 208
+      },
+      "duration_minutes": 29,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_018",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Zone Chimique.",
+      "spawn_probability": 0.2182113279384627,
+      "triggers": [
+        "time",
+        "time",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 20,
+        "score": 367
+      },
+      "duration_minutes": 17,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_019",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Secteur Alpha. Un informateur veut vous parler.",
+      "spawn_probability": 0.12291321240844902,
+      "triggers": [
+        "act",
+        "time",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -3,
+        "score": 495
+      },
+      "duration_minutes": 15,
+      "exclusive_with": [
+        "event_031"
+      ]
+    },
+    {
+      "id": "event_020",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Nova Marché. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.05660374621644493,
+      "triggers": [
+        "kills",
+        "act",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 8,
+        "score": 358
+      },
+      "duration_minutes": 10,
+      "exclusive_with": [
+        "event_056"
+      ]
+    },
+    {
+      "id": "event_021",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Zone Chimique.",
+      "spawn_probability": 0.07246594080517442,
+      "triggers": [
+        "time",
+        "act",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -7,
+        "score": 213
+      },
+      "duration_minutes": 19,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_022",
+      "type": "civilian_riot",
+      "description": "Les habitants de L'Ancien Alger se révoltent contre la taxe eau.",
+      "spawn_probability": 0.21045798487667045,
+      "triggers": [
+        "rep",
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 2,
+        "score": 341
+      },
+      "duration_minutes": 20,
+      "exclusive_with": [
+        "event_057"
+      ]
+    },
+    {
+      "id": "event_023",
+      "type": "drone_malfunction",
+      "description": "Un drone Déta s'écrase dans L'Ancien Alger. Composants récupérables.",
+      "spawn_probability": 0.15577359181498157,
+      "triggers": [
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -6,
+        "score": 332
+      },
+      "duration_minutes": 27,
+      "exclusive_with": [
+        "event_023"
+      ]
+    },
+    {
+      "id": "event_024",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans Port Industriel.",
+      "spawn_probability": 0.058683064863561986,
+      "triggers": [
+        "time",
+        "time",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -2,
+        "score": 376
+      },
+      "duration_minutes": 18,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_025",
+      "type": "drone_malfunction",
+      "description": "Un drone Déta s'écrase dans Nova Marché. Composants récupérables.",
+      "spawn_probability": 0.13701009695330615,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -4,
+        "score": 208
+      },
+      "duration_minutes": 23,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_026",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Les Souterrains. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.09746107088067513,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 17,
+        "score": 408
+      },
+      "duration_minutes": 19,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_027",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans Nova Marché.",
+      "spawn_probability": 0.10501775873193096,
+      "triggers": [
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 5,
+        "score": 340
+      },
+      "duration_minutes": 16,
+      "exclusive_with": [
+        "event_094"
+      ]
+    },
+    {
+      "id": "event_028",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Zone Chimique. 82 civils évacués.",
+      "spawn_probability": 0.0870963066520043,
+      "triggers": [
+        "rep",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -10,
+        "score": 437
+      },
+      "duration_minutes": 17,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_029",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Port Industriel. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.08804902720627057,
+      "triggers": [
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 14,
+        "score": 328
+      },
+      "duration_minutes": 18,
+      "exclusive_with": [
+        "event_025"
+      ]
+    },
+    {
+      "id": "event_030",
+      "type": "black_market",
+      "description": "Marché noir actif dans L'Ancien Alger ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.14837744299292072,
+      "triggers": [
+        "rep",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 6,
+        "score": 435
+      },
+      "duration_minutes": 26,
+      "exclusive_with": [
+        "event_035"
+      ]
+    },
+    {
+      "id": "event_031",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Port Industriel. Un informateur veut vous parler.",
+      "spawn_probability": 0.1124705243659474,
+      "triggers": [
+        "rep",
+        "time",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 19,
+        "score": 313
+      },
+      "duration_minutes": 6,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_032",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant L'Ancien Alger. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.23752608486420262,
+      "triggers": [
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -1,
+        "score": 339
+      },
+      "duration_minutes": 11,
+      "exclusive_with": [
+        "event_028"
+      ]
+    },
+    {
+      "id": "event_033",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Secteur Alpha. Un informateur veut vous parler.",
+      "spawn_probability": 0.2159719403109024,
+      "triggers": [
+        "kills",
+        "kills",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 6,
+        "score": 63
+      },
+      "duration_minutes": 29,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_034",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Port Industriel. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.10627416218777386,
+      "triggers": [
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 17,
+        "score": 460
+      },
+      "duration_minutes": 21,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_035",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans L'Ancien Alger. Un informateur veut vous parler.",
+      "spawn_probability": 0.21677938848828193,
+      "triggers": [
+        "kills",
+        "time",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 13,
+        "score": 300
+      },
+      "duration_minutes": 11,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_036",
+      "type": "black_market",
+      "description": "Marché noir actif dans L'Ancien Alger ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.16090826804241448,
+      "triggers": [
+        "kills",
+        "act",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 6,
+        "score": 372
+      },
+      "duration_minutes": 9,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_037",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Les Souterrains. Un informateur veut vous parler.",
+      "spawn_probability": 0.07668556999865878,
+      "triggers": [
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 11,
+        "score": 449
+      },
+      "duration_minutes": 28,
+      "exclusive_with": [
+        "event_009"
+      ]
+    },
+    {
+      "id": "event_038",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans L'Ancien Alger.",
+      "spawn_probability": 0.19952673483257743,
+      "triggers": [
+        "kills",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 12,
+        "score": 240
+      },
+      "duration_minutes": 28,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_039",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans L'Ancien Alger.",
+      "spawn_probability": 0.18166975729569174,
+      "triggers": [
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 4,
+        "score": 360
+      },
+      "duration_minutes": 6,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_040",
+      "type": "gas_leak",
+      "description": "Une fuite de Fumée dans Secteur Alpha. 142 civils évacués.",
+      "spawn_probability": 0.11759082071217038,
+      "triggers": [
+        "rep",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 19,
+        "score": 141
+      },
+      "duration_minutes": 17,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_041",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans L'Ancien Alger.",
+      "spawn_probability": 0.19772709802502642,
+      "triggers": [
+        "kills",
+        "act",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 12,
+        "score": 458
+      },
+      "duration_minutes": 6,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_042",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Port Industriel. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.12200739149210577,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 8,
+        "score": 421
+      },
+      "duration_minutes": 11,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_043",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Secteur Alpha.",
+      "spawn_probability": 0.13019057881171509,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -1,
+        "score": 299
+      },
+      "duration_minutes": 21,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_044",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Zone Chimique.",
+      "spawn_probability": 0.1988115650478003,
+      "triggers": [
+        "rep",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": -6,
+        "score": 252
+      },
+      "duration_minutes": 16,
+      "exclusive_with": [
+        "event_016"
+      ]
+    },
+    {
+      "id": "event_045",
+      "type": "drone_malfunction",
+      "description": "Un drone Déta s'écrase dans Zone Chimique. Composants récupérables.",
+      "spawn_probability": 0.13653275514992236,
+      "triggers": [
+        "rep",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 19,
+        "score": 221
+      },
+      "duration_minutes": 20,
+      "exclusive_with": [
+        "event_006"
+      ]
+    },
+    {
+      "id": "event_046",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Inerte dans Zone Chimique. 124 civils évacués.",
+      "spawn_probability": 0.1533565442569229,
+      "triggers": [
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -3,
+        "score": 274
+      },
+      "duration_minutes": 14,
+      "exclusive_with": [
+        "event_009"
+      ]
+    },
+    {
+      "id": "event_047",
+      "type": "civilian_riot",
+      "description": "Les habitants de Port Industriel se révoltent contre la taxe eau.",
+      "spawn_probability": 0.21850568734002007,
+      "triggers": [
+        "act",
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 13,
+        "score": 227
+      },
+      "duration_minutes": 5,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_048",
+      "type": "civilian_riot",
+      "description": "Les habitants de Port Industriel se révoltent contre la taxe eau.",
+      "spawn_probability": 0.08958157535987739,
+      "triggers": [
+        "rep",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 19,
+        "score": 113
+      },
+      "duration_minutes": 24,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_049",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Nova Marché. Un informateur veut vous parler.",
+      "spawn_probability": 0.12635836618356133,
+      "triggers": [
+        "act",
+        "act",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -1,
+        "score": 410
+      },
+      "duration_minutes": 28,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_050",
+      "type": "black_market",
+      "description": "Marché noir actif dans Les Souterrains ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.20216537275915475,
+      "triggers": [
+        "kills",
+        "rep",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -4,
+        "score": 177
+      },
+      "duration_minutes": 21,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_051",
+      "type": "civilian_riot",
+      "description": "Les habitants de Zone Chimique se révoltent contre la taxe eau.",
+      "spawn_probability": 0.20514065909256057,
+      "triggers": [
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -2,
+        "score": 122
+      },
+      "duration_minutes": 7,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_052",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans L'Ancien Alger.",
+      "spawn_probability": 0.17751300399423575,
+      "triggers": [
+        "time",
+        "time",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 3,
+        "score": 406
+      },
+      "duration_minutes": 19,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_053",
+      "type": "civilian_riot",
+      "description": "Les habitants de Nova Marché se révoltent contre la taxe eau.",
+      "spawn_probability": 0.0739925212840562,
+      "triggers": [
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": -4,
+        "score": 93
+      },
+      "duration_minutes": 29,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_054",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Inerte dans L'Ancien Alger. 13 civils évacués.",
+      "spawn_probability": 0.16368883020127734,
+      "triggers": [
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -4,
+        "score": 61
+      },
+      "duration_minutes": 5,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_055",
+      "type": "black_market",
+      "description": "Marché noir actif dans Zone Chimique ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.13645407645047725,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 15,
+        "score": 134
+      },
+      "duration_minutes": 15,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_056",
+      "type": "drone_malfunction",
+      "description": "Un drone Déta s'écrase dans Port Industriel. Composants récupérables.",
+      "spawn_probability": 0.2038632365404523,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 12,
+        "score": 203
+      },
+      "duration_minutes": 10,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_057",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans L'Ancien Alger.",
+      "spawn_probability": 0.13842202186913527,
+      "triggers": [
+        "time",
+        "act",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 19,
+        "score": 101
+      },
+      "duration_minutes": 7,
+      "exclusive_with": [
+        "event_001"
+      ]
+    },
+    {
+      "id": "event_058",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Zone Chimique.",
+      "spawn_probability": 0.22234019787333248,
+      "triggers": [
+        "time",
+        "act",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 10,
+        "score": 145
+      },
+      "duration_minutes": 30,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_059",
+      "type": "black_market",
+      "description": "Marché noir actif dans Nova Marché ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.19961187967766914,
+      "triggers": [
+        "time",
+        "rep",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 10,
+        "score": 64
+      },
+      "duration_minutes": 14,
+      "exclusive_with": [
+        "event_022"
+      ]
+    },
+    {
+      "id": "event_060",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Les Souterrains. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.056211290712839035,
+      "triggers": [
+        "rep",
+        "rep",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -7,
+        "score": 401
+      },
+      "duration_minutes": 17,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_061",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Nova Marché. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.07536045121510555,
+      "triggers": [
+        "rep",
+        "time",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 12,
+        "score": 374
+      },
+      "duration_minutes": 27,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_062",
+      "type": "civilian_riot",
+      "description": "Les habitants de Nova Marché se révoltent contre la taxe eau.",
+      "spawn_probability": 0.18184477950954786,
+      "triggers": [
+        "time",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 3,
+        "score": 148
+      },
+      "duration_minutes": 14,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_063",
+      "type": "black_market",
+      "description": "Marché noir actif dans L'Ancien Alger ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.11179739160420875,
+      "triggers": [
+        "kills",
+        "rep",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -6,
+        "score": 187
+      },
+      "duration_minutes": 7,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_064",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Nova Marché.",
+      "spawn_probability": 0.13253321925048767,
+      "triggers": [
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 3,
+        "score": 365
+      },
+      "duration_minutes": 9,
+      "exclusive_with": [
+        "event_084"
+      ]
+    },
+    {
+      "id": "event_065",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Les Souterrains.",
+      "spawn_probability": 0.22094920604482915,
+      "triggers": [
+        "time",
+        "time",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -5,
+        "score": 387
+      },
+      "duration_minutes": 10,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_066",
+      "type": "gas_leak",
+      "description": "Une fuite de Inferno dans Secteur Alpha. 151 civils évacués.",
+      "spawn_probability": 0.050838884770485954,
+      "triggers": [
+        "time",
+        "rep",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 19,
+        "score": 116
+      },
+      "duration_minutes": 16,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_067",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Zone Chimique.",
+      "spawn_probability": 0.20041337074627558,
+      "triggers": [
+        "kills",
+        "time",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 3,
+        "score": 447
+      },
+      "duration_minutes": 20,
+      "exclusive_with": [
+        "event_015"
+      ]
+    },
+    {
+      "id": "event_068",
+      "type": "black_market",
+      "description": "Marché noir actif dans Secteur Alpha ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.14471293231223997,
+      "triggers": [
+        "act",
+        "time",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -10,
+        "score": 455
+      },
+      "duration_minutes": 19,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_069",
+      "type": "black_market",
+      "description": "Marché noir actif dans Zone Chimique ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.1047867833646238,
+      "triggers": [
+        "rep",
+        "time",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 6,
+        "score": 172
+      },
+      "duration_minutes": 14,
+      "exclusive_with": [
+        "event_027"
+      ]
+    },
+    {
+      "id": "event_070",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Port Industriel. Un informateur veut vous parler.",
+      "spawn_probability": 0.1816706407301379,
+      "triggers": [
+        "act",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -2,
+        "score": 172
+      },
+      "duration_minutes": 26,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_071",
+      "type": "civilian_riot",
+      "description": "Les habitants de Les Souterrains se révoltent contre la taxe eau.",
+      "spawn_probability": 0.1909886893793516,
+      "triggers": [
+        "rep",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 16,
+        "score": 262
+      },
+      "duration_minutes": 23,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_072",
+      "type": "civilian_riot",
+      "description": "Les habitants de Secteur Alpha se révoltent contre la taxe eau.",
+      "spawn_probability": 0.1844772612257145,
+      "triggers": [
+        "time",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 9,
+        "score": 484
+      },
+      "duration_minutes": 27,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_073",
+      "type": "drone_malfunction",
+      "description": "Un drone Déta s'écrase dans Zone Chimique. Composants récupérables.",
+      "spawn_probability": 0.07454199828716541,
+      "triggers": [
+        "time",
+        "time",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 10,
+        "score": 213
+      },
+      "duration_minutes": 29,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_074",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Nova Marché. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.19187189977342234,
+      "triggers": [
+        "time",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 5,
+        "score": 284
+      },
+      "duration_minutes": 21,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_075",
+      "type": "civilian_riot",
+      "description": "Les habitants de Port Industriel se révoltent contre la taxe eau.",
+      "spawn_probability": 0.09515919418439106,
+      "triggers": [
+        "time",
+        "kills",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 1,
+        "score": 257
+      },
+      "duration_minutes": 28,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_076",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Zone Chimique. 188 civils évacués.",
+      "spawn_probability": 0.18689916367817822,
+      "triggers": [
+        "act",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 10,
+        "score": 390
+      },
+      "duration_minutes": 6,
+      "exclusive_with": [
+        "event_050"
+      ]
+    },
+    {
+      "id": "event_077",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans Zone Chimique.",
+      "spawn_probability": 0.1799556587950803,
+      "triggers": [
+        "time",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": -5,
+        "score": 149
+      },
+      "duration_minutes": 8,
+      "exclusive_with": [
+        "event_040"
+      ]
+    },
+    {
+      "id": "event_078",
+      "type": "drone_malfunction",
+      "description": "Un drone Déta s'écrase dans L'Ancien Alger. Composants récupérables.",
+      "spawn_probability": 0.24473168103071735,
+      "triggers": [
+        "kills",
+        "kills",
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 12,
+        "score": 434
+      },
+      "duration_minutes": 16,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_079",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Secteur Alpha.",
+      "spawn_probability": 0.1927235399785847,
+      "triggers": [
+        "act",
+        "kills",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 8,
+        "score": 387
+      },
+      "duration_minutes": 7,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_080",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Secteur Alpha. 75 civils évacués.",
+      "spawn_probability": 0.054055280667091136,
+      "triggers": [
+        "time",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -9,
+        "score": 237
+      },
+      "duration_minutes": 16,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_081",
+      "type": "gas_leak",
+      "description": "Une fuite de Fumée dans Les Souterrains. 185 civils évacués.",
+      "spawn_probability": 0.16029595529787188,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": -5,
+        "score": 215
+      },
+      "duration_minutes": 22,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_082",
+      "type": "liam_sighting",
+      "description": "Liam aperçu dans Nova Marché. Un informateur veut vous parler.",
+      "spawn_probability": 0.18921247828022858,
+      "triggers": [
+        "kills",
+        "time",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 1,
+        "score": 408
+      },
+      "duration_minutes": 10,
+      "exclusive_with": [
+        "event_070"
+      ]
+    },
+    {
+      "id": "event_083",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Secteur Alpha. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.1764000820881903,
+      "triggers": [
+        "time",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": -8,
+        "score": 306
+      },
+      "duration_minutes": 8,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_084",
+      "type": "black_market",
+      "description": "Marché noir actif dans Secteur Alpha ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.14620802103452096,
+      "triggers": [
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 15,
+        "score": 186
+      },
+      "duration_minutes": 15,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_085",
+      "type": "civilian_riot",
+      "description": "Les habitants de Secteur Alpha se révoltent contre la taxe eau.",
+      "spawn_probability": 0.11014178451919317,
+      "triggers": [
+        "rep",
+        "rep",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 9,
+        "score": 497
+      },
+      "duration_minutes": 22,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_086",
+      "type": "black_market",
+      "description": "Marché noir actif dans Les Souterrains ce soir. Armes et gaz disponibles.",
+      "spawn_probability": 0.07209990906766402,
+      "triggers": [
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 3,
+        "score": 238
+      },
+      "duration_minutes": 18,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_087",
+      "type": "civilian_riot",
+      "description": "Les habitants de Zone Chimique se révoltent contre la taxe eau.",
+      "spawn_probability": 0.07739156689288318,
+      "triggers": [
+        "act",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -5,
+        "score": 221
+      },
+      "duration_minutes": 13,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_088",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Secteur Alpha. 68 civils évacués.",
+      "spawn_probability": 0.21911838689572,
+      "triggers": [
+        "kills",
+        "act",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 8,
+        "score": 309
+      },
+      "duration_minutes": 10,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_089",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Nova Marché. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.225785663627395,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 14,
+        "score": 128
+      },
+      "duration_minutes": 10,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_090",
+      "type": "deta_arrest",
+      "description": "Déta Corp arrête 5 membres de la Résistance dans Secteur Alpha.",
+      "spawn_probability": 0.16577768517369107,
+      "triggers": [
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 6,
+        "score": 134
+      },
+      "duration_minutes": 15,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_091",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Secteur Alpha. 66 civils évacués.",
+      "spawn_probability": 0.09236792731462445,
+      "triggers": [
+        "kills"
+      ],
+      "reward": {
+        "rep_citizens": 18,
+        "score": 400
+      },
+      "duration_minutes": 27,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_092",
+      "type": "civilian_riot",
+      "description": "Les habitants de Nova Marché se révoltent contre la taxe eau.",
+      "spawn_probability": 0.09813569559449564,
+      "triggers": [
+        "act",
+        "time",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": -9,
+        "score": 430
+      },
+      "duration_minutes": 24,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_093",
+      "type": "civilian_riot",
+      "description": "Les habitants de Zone Chimique se révoltent contre la taxe eau.",
+      "spawn_probability": 0.051267282664772144,
+      "triggers": [
+        "kills",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": 0,
+        "score": 206
+      },
+      "duration_minutes": 21,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_094",
+      "type": "gas_leak",
+      "description": "Une fuite de Gaz Rire dans Zone Chimique. 162 civils évacués.",
+      "spawn_probability": 0.07032840994307143,
+      "triggers": [
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 10,
+        "score": 241
+      },
+      "duration_minutes": 10,
+      "exclusive_with": [
+        "event_076"
+      ]
+    },
+    {
+      "id": "event_095",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Port Industriel. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.11948314536752336,
+      "triggers": [
+        "act",
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -7,
+        "score": 466
+      },
+      "duration_minutes": 29,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_096",
+      "type": "civilian_riot",
+      "description": "Les habitants de Port Industriel se révoltent contre la taxe eau.",
+      "spawn_probability": 0.12372033256196924,
+      "triggers": [
+        "time"
+      ],
+      "reward": {
+        "rep_citizens": -7,
+        "score": 278
+      },
+      "duration_minutes": 27,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_097",
+      "type": "resistance_raid",
+      "description": "La Résistance attaque un convoi de Déta dans Zone Chimique.",
+      "spawn_probability": 0.10537121642673519,
+      "triggers": [
+        "kills",
+        "rep"
+      ],
+      "reward": {
+        "rep_citizens": 13,
+        "score": 388
+      },
+      "duration_minutes": 5,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_098",
+      "type": "gas_leak",
+      "description": "Une fuite de Fumée dans Les Souterrains. 140 civils évacués.",
+      "spawn_probability": 0.07007952782508704,
+      "triggers": [
+        "act",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 2,
+        "score": 493
+      },
+      "duration_minutes": 26,
+      "exclusive_with": []
+    },
+    {
+      "id": "event_099",
+      "type": "chemical_fog",
+      "description": "Brouillard chimique couvrant Zone Chimique. Gaz Rire atmosphérique léger.",
+      "spawn_probability": 0.06923593075942712,
+      "triggers": [
+        "kills",
+        "kills",
+        "act"
+      ],
+      "reward": {
+        "rep_citizens": 20,
+        "score": 116
+      },
+      "duration_minutes": 16,
+      "exclusive_with": []
+    }
+  ],
+  "side_missions": [
+    {
+      "id": "side_000",
+      "title": "Sauver les civils exposés au gaz",
+      "district": "Secteur Alpha",
+      "act": 2,
+      "type": "collect",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 560,
+        "rep": {
+          "citizens": 8
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_001",
+      "title": "Infiltrer la réunion de Déta",
+      "district": "L'Ancien Alger",
+      "act": 3,
+      "type": "combat",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1113,
+        "rep": {
+          "law": 1
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_002",
+      "title": "Récupérer les données du Dr. Frost",
+      "district": "Nova Marché",
+      "act": 3,
+      "type": "combat",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 950,
+        "rep": {
+          "law": 0
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_003",
+      "title": "Libérer les prisonniers de Déta",
+      "district": "Zone Chimique",
+      "act": 1,
+      "type": "hack",
+      "difficulty": 3,
+      "time_limit_minutes": 8,
+      "reward": {
+        "score": 1351,
+        "rep": {
+          "law": 18
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q1"
+      ]
+    },
+    {
+      "id": "side_004",
+      "title": "Assassiner le commandant de sector",
+      "district": "Zone Chimique",
+      "act": 3,
+      "type": "stealth",
+      "difficulty": 1,
+      "time_limit_minutes": 19,
+      "reward": {
+        "score": 871,
+        "rep": {
+          "deta": 4
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_005",
+      "title": "Escorter le chef de la Résistance",
+      "district": "Les Souterrains",
+      "act": 2,
+      "type": "hack",
+      "difficulty": 4,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1277,
+        "rep": {
+          "law": 12
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q1"
+      ]
+    },
+    {
+      "id": "side_006",
+      "title": "Assassiner le commandant de sector",
+      "district": "Port Industriel",
+      "act": 2,
+      "type": "stealth",
+      "difficulty": 4,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1533,
+        "rep": {
+          "law": -8
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_007",
+      "title": "Escorter le chef de la Résistance",
+      "district": "Nova Marché",
+      "act": 2,
+      "type": "escort",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1394,
+        "rep": {
+          "law": 9
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q3"
+      ]
+    },
+    {
+      "id": "side_008",
+      "title": "Récupérer les données du Dr. Frost",
+      "district": "Port Industriel",
+      "act": 2,
+      "type": "stealth",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 351,
+        "rep": {
+          "law": -13
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": [
+        "q2"
+      ]
+    },
+    {
+      "id": "side_009",
+      "title": "Neutraliser les drones patrouilleurs",
+      "district": "Nova Marché",
+      "act": 3,
+      "type": "stealth",
+      "difficulty": 5,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1985,
+        "rep": {
+          "law": 8
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q2"
+      ]
+    },
+    {
+      "id": "side_010",
+      "title": "Saboter le réservoir N°1",
+      "district": "Port Industriel",
+      "act": 1,
+      "type": "collect",
+      "difficulty": 4,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1410,
+        "rep": {
+          "merc": 14
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_011",
+      "title": "Assassiner le commandant de sector",
+      "district": "Nova Marché",
+      "act": 2,
+      "type": "collect",
+      "difficulty": 4,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 592,
+        "rep": {
+          "merc": -10
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q3"
+      ]
+    },
+    {
+      "id": "side_012",
+      "title": "Neutraliser les drones patrouilleurs",
+      "district": "Zone Chimique",
+      "act": 1,
+      "type": "hack",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1398,
+        "rep": {
+          "merc": -4
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": [
+        "q1"
+      ]
+    },
+    {
+      "id": "side_013",
+      "title": "Libérer les prisonniers de Déta",
+      "district": "L'Ancien Alger",
+      "act": 3,
+      "type": "combat",
+      "difficulty": 1,
+      "time_limit_minutes": 14,
+      "reward": {
+        "score": 1397,
+        "rep": {
+          "law": 11
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": [
+        "q4"
+      ]
+    },
+    {
+      "id": "side_014",
+      "title": "Sauver les civils exposés au gaz",
+      "district": "Port Industriel",
+      "act": 3,
+      "type": "stealth",
+      "difficulty": 5,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1450,
+        "rep": {
+          "law": 0
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q5"
+      ]
+    },
+    {
+      "id": "side_015",
+      "title": "Récupérer les données du Dr. Frost",
+      "district": "Port Industriel",
+      "act": 1,
+      "type": "combat",
+      "difficulty": 1,
+      "time_limit_minutes": 15,
+      "reward": {
+        "score": 1690,
+        "rep": {
+          "citizens": -6
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q4"
+      ]
+    },
+    {
+      "id": "side_016",
+      "title": "Trouver le traître dans la Résistance",
+      "district": "Port Industriel",
+      "act": 3,
+      "type": "combat",
+      "difficulty": 4,
+      "time_limit_minutes": 7,
+      "reward": {
+        "score": 1226,
+        "rep": {
+          "merc": -1
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_017",
+      "title": "Pirater la tour de contrôle",
+      "district": "Les Souterrains",
+      "act": 3,
+      "type": "hack",
+      "difficulty": 1,
+      "time_limit_minutes": 9,
+      "reward": {
+        "score": 1955,
+        "rep": {
+          "merc": -14
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q3"
+      ]
+    },
+    {
+      "id": "side_018",
+      "title": "Saboter le réservoir N°7",
+      "district": "Port Industriel",
+      "act": 2,
+      "type": "combat",
+      "difficulty": 2,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1253,
+        "rep": {
+          "citizens": -6
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_019",
+      "title": "Récupérer les données du Dr. Frost",
+      "district": "Les Souterrains",
+      "act": 2,
+      "type": "hack",
+      "difficulty": 5,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1579,
+        "rep": {
+          "merc": -4
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_020",
+      "title": "Libérer les prisonniers de Déta",
+      "district": "Secteur Alpha",
+      "act": 1,
+      "type": "hack",
+      "difficulty": 4,
+      "time_limit_minutes": 14,
+      "reward": {
+        "score": 1067,
+        "rep": {
+          "merc": -2
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": [
+        "q3"
+      ]
+    },
+    {
+      "id": "side_021",
+      "title": "Sauver les civils exposés au gaz",
+      "district": "Les Souterrains",
+      "act": 3,
+      "type": "collect",
+      "difficulty": 2,
+      "time_limit_minutes": 9,
+      "reward": {
+        "score": 418,
+        "rep": {
+          "citizens": 13
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_022",
+      "title": "Récupérer les données du Dr. Frost",
+      "district": "Les Souterrains",
+      "act": 1,
+      "type": "escort",
+      "difficulty": 5,
+      "time_limit_minutes": 18,
+      "reward": {
+        "score": 741,
+        "rep": {
+          "merc": 15
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": []
+    },
+    {
+      "id": "side_023",
+      "title": "Voler le prototype de gaz",
+      "district": "Nova Marché",
+      "act": 3,
+      "type": "combat",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1873,
+        "rep": {
+          "merc": 7
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q4"
+      ]
+    },
+    {
+      "id": "side_024",
+      "title": "Voler le prototype de gaz",
+      "district": "Zone Chimique",
+      "act": 3,
+      "type": "collect",
+      "difficulty": 2,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1581,
+        "rep": {
+          "citizens": -12
+        },
+        "skill_points": 0
+      },
+      "prerequisite_quests": [
+        "q3"
+      ]
+    },
+    {
+      "id": "side_025",
+      "title": "Assassiner le commandant de sector",
+      "district": "Les Souterrains",
+      "act": 1,
+      "type": "hack",
+      "difficulty": 3,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1563,
+        "rep": {
+          "merc": 0
+        },
+        "skill_points": 1
+      },
+      "prerequisite_quests": [
+        "q5"
+      ]
+    },
+    {
+      "id": "side_026",
+      "title": "Détruire le laboratoire secret",
+      "district": "Port Industriel",
+      "act": 2,
+      "type": "stealth",
+      "difficulty": 5,
+      "time_limit_minutes": 7,
+      "reward": {
+        "score": 839,
+        "rep": {
+          "deta": 20
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q2"
+      ]
+    },
+    {
+      "id": "side_027",
+      "title": "Détruire le laboratoire secret",
+      "district": "Zone Chimique",
+      "act": 1,
+      "type": "collect",
+      "difficulty": 2,
+      "time_limit_minutes": 9,
+      "reward": {
+        "score": 1658,
+        "rep": {
+          "citizens": 17
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q2"
+      ]
+    },
+    {
+      "id": "side_028",
+      "title": "Récupérer les données du Dr. Frost",
+      "district": "Nova Marché",
+      "act": 2,
+      "type": "escort",
+      "difficulty": 5,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1793,
+        "rep": {
+          "citizens": 18
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q3"
+      ]
+    },
+    {
+      "id": "side_029",
+      "title": "Pirater la tour de contrôle",
+      "district": "Port Industriel",
+      "act": 1,
+      "type": "escort",
+      "difficulty": 2,
+      "time_limit_minutes": null,
+      "reward": {
+        "score": 1603,
+        "rep": {
+          "law": 12
+        },
+        "skill_points": 2
+      },
+      "prerequisite_quests": [
+        "q4"
+      ]
+    }
+  ],
+  "citizen_encounters": [
+    {
+      "id": "enc_000",
+      "location": "L'Ancien Alger",
+      "npc_type": "informant",
+      "trigger_distance": 78,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_001",
+      "location": "Les Souterrains",
+      "npc_type": "elder",
+      "trigger_distance": 99,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -3
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_002",
+      "location": "Les Souterrains",
+      "npc_type": "elder",
+      "trigger_distance": 74,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_003",
+      "location": "Nova Marché",
+      "npc_type": "informant",
+      "trigger_distance": 79,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 8
+      },
+      "lines": [
+        {
+          "speaker": "CIVIL",
+          "text": "S'il vous plaît — l'eau est coupée depuis 3 jours dans notre bloc."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Déta fait ça exprès."
+        },
+        {
+          "speaker": "CIVIL",
+          "text": "Que pouvez-vous faire ?"
+        }
+      ]
+    },
+    {
+      "id": "enc_004",
+      "location": "Secteur Alpha",
+      "npc_type": "informant",
+      "trigger_distance": 96,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 2
+      },
+      "lines": [
+        {
+          "speaker": "CIVIL",
+          "text": "S'il vous plaît — l'eau est coupée depuis 3 jours dans notre bloc."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Déta fait ça exprès."
+        },
+        {
+          "speaker": "CIVIL",
+          "text": "Que pouvez-vous faire ?"
+        }
+      ]
+    },
+    {
+      "id": "enc_005",
+      "location": "Les Souterrains",
+      "npc_type": "elder",
+      "trigger_distance": 67,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_006",
+      "location": "Secteur Alpha",
+      "npc_type": "child",
+      "trigger_distance": 82,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 3
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_007",
+      "location": "Secteur Alpha",
+      "npc_type": "informant",
+      "trigger_distance": 86,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -2
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_008",
+      "location": "Nova Marché",
+      "npc_type": "informant",
+      "trigger_distance": 83,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -2
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_009",
+      "location": "Zone Chimique",
+      "npc_type": "elder",
+      "trigger_distance": 75,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_010",
+      "location": "Port Industriel",
+      "npc_type": "civilian",
+      "trigger_distance": 93,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_011",
+      "location": "Les Souterrains",
+      "npc_type": "informant",
+      "trigger_distance": 78,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -1
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_012",
+      "location": "Les Souterrains",
+      "npc_type": "informant",
+      "trigger_distance": 99,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_013",
+      "location": "L'Ancien Alger",
+      "npc_type": "elder",
+      "trigger_distance": 62,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -1
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_014",
+      "location": "Nova Marché",
+      "npc_type": "elder",
+      "trigger_distance": 54,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 4
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_015",
+      "location": "L'Ancien Alger",
+      "npc_type": "rebel",
+      "trigger_distance": 65,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_016",
+      "location": "Nova Marché",
+      "npc_type": "child",
+      "trigger_distance": 73,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_017",
+      "location": "Port Industriel",
+      "npc_type": "rebel",
+      "trigger_distance": 50,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 3
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_018",
+      "location": "Zone Chimique",
+      "npc_type": "child",
+      "trigger_distance": 99,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_019",
+      "location": "L'Ancien Alger",
+      "npc_type": "merchant",
+      "trigger_distance": 73,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -3
+      },
+      "lines": [
+        {
+          "speaker": "CIVIL",
+          "text": "S'il vous plaît — l'eau est coupée depuis 3 jours dans notre bloc."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Déta fait ça exprès."
+        },
+        {
+          "speaker": "CIVIL",
+          "text": "Que pouvez-vous faire ?"
+        }
+      ]
+    },
+    {
+      "id": "enc_020",
+      "location": "Port Industriel",
+      "npc_type": "elder",
+      "trigger_distance": 65,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_021",
+      "location": "L'Ancien Alger",
+      "npc_type": "child",
+      "trigger_distance": 93,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 3
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_022",
+      "location": "Port Industriel",
+      "npc_type": "elder",
+      "trigger_distance": 52,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_023",
+      "location": "Zone Chimique",
+      "npc_type": "merchant",
+      "trigger_distance": 68,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_024",
+      "location": "Port Industriel",
+      "npc_type": "child",
+      "trigger_distance": 69,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -2
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_025",
+      "location": "L'Ancien Alger",
+      "npc_type": "civilian",
+      "trigger_distance": 76,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 3
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_026",
+      "location": "Port Industriel",
+      "npc_type": "rebel",
+      "trigger_distance": 89,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -1
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_027",
+      "location": "L'Ancien Alger",
+      "npc_type": "elder",
+      "trigger_distance": 68,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": -3
+      },
+      "lines": [
+        {
+          "speaker": "CIVIL",
+          "text": "S'il vous plaît — l'eau est coupée depuis 3 jours dans notre bloc."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Déta fait ça exprès."
+        },
+        {
+          "speaker": "CIVIL",
+          "text": "Que pouvez-vous faire ?"
+        }
+      ]
+    },
+    {
+      "id": "enc_028",
+      "location": "Les Souterrains",
+      "npc_type": "child",
+      "trigger_distance": 94,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 3
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_029",
+      "location": "Zone Chimique",
+      "npc_type": "elder",
+      "trigger_distance": 55,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 6
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_030",
+      "location": "Nova Marché",
+      "npc_type": "merchant",
+      "trigger_distance": 80,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 0
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_031",
+      "location": "Les Souterrains",
+      "npc_type": "elder",
+      "trigger_distance": 71,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 8
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_032",
+      "location": "Zone Chimique",
+      "npc_type": "informant",
+      "trigger_distance": 79,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_033",
+      "location": "L'Ancien Alger",
+      "npc_type": "rebel",
+      "trigger_distance": 94,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 2
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_034",
+      "location": "Secteur Alpha",
+      "npc_type": "child",
+      "trigger_distance": 82,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": -2
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_035",
+      "location": "Secteur Alpha",
+      "npc_type": "merchant",
+      "trigger_distance": 97,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_036",
+      "location": "Secteur Alpha",
+      "npc_type": "rebel",
+      "trigger_distance": 91,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_037",
+      "location": "Port Industriel",
+      "npc_type": "elder",
+      "trigger_distance": 52,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": -3
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_038",
+      "location": "Secteur Alpha",
+      "npc_type": "civilian",
+      "trigger_distance": 52,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_039",
+      "location": "Nova Marché",
+      "npc_type": "informant",
+      "trigger_distance": 70,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 5
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_040",
+      "location": "Secteur Alpha",
+      "npc_type": "child",
+      "trigger_distance": 53,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_041",
+      "location": "Port Industriel",
+      "npc_type": "rebel",
+      "trigger_distance": 64,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 8
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_042",
+      "location": "Zone Chimique",
+      "npc_type": "child",
+      "trigger_distance": 56,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 7
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    },
+    {
+      "id": "enc_043",
+      "location": "Port Industriel",
+      "npc_type": "rebel",
+      "trigger_distance": 60,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 0
+      },
+      "lines": [
+        {
+          "speaker": "CIVIL",
+          "text": "S'il vous plaît — l'eau est coupée depuis 3 jours dans notre bloc."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Déta fait ça exprès."
+        },
+        {
+          "speaker": "CIVIL",
+          "text": "Que pouvez-vous faire ?"
+        }
+      ]
+    },
+    {
+      "id": "enc_044",
+      "location": "Port Industriel",
+      "npc_type": "merchant",
+      "trigger_distance": 90,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "ENFANT",
+          "text": "C'est vous le héros de la Résistance ?"
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Je ne suis pas un héros."
+        },
+        {
+          "speaker": "ENFANT",
+          "text": "Monsieur Liam dit que vous l'êtes."
+        }
+      ]
+    },
+    {
+      "id": "enc_045",
+      "location": "Les Souterrains",
+      "npc_type": "rebel",
+      "trigger_distance": 73,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 6
+      },
+      "lines": [
+        {
+          "speaker": "MARCHAND",
+          "text": "Je peux vous fournir du gaz. Mais Déta me surveille. Revenez cette nuit."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Code de contact ?"
+        },
+        {
+          "speaker": "MARCHAND",
+          "text": "Dzaïr vous connaît."
+        }
+      ]
+    },
+    {
+      "id": "enc_046",
+      "location": "Secteur Alpha",
+      "npc_type": "rebel",
+      "trigger_distance": 97,
+      "one_time": false,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_047",
+      "location": "Secteur Alpha",
+      "npc_type": "rebel",
+      "trigger_distance": 72,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 3
+      },
+      "lines": [
+        {
+          "speaker": "REBELLE",
+          "text": "Les terminaux T-04 et T-07 sont moins gardés à l'aube."
+        },
+        {
+          "speaker": "LANA",
+          "text": "Comment tu sais ça ?"
+        },
+        {
+          "speaker": "REBELLE",
+          "text": "J'y travaillais. Avant."
+        }
+      ]
+    },
+    {
+      "id": "enc_048",
+      "location": "L'Ancien Alger",
+      "npc_type": "elder",
+      "trigger_distance": 98,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 4
+      },
+      "lines": [
+        {
+          "speaker": "CIVIL",
+          "text": "S'il vous plaît — l'eau est coupée depuis 3 jours dans notre bloc."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "Déta fait ça exprès."
+        },
+        {
+          "speaker": "CIVIL",
+          "text": "Que pouvez-vous faire ?"
+        }
+      ]
+    },
+    {
+      "id": "enc_049",
+      "location": "Port Industriel",
+      "npc_type": "elder",
+      "trigger_distance": 89,
+      "one_time": true,
+      "rep_effect": {
+        "citizens": 1
+      },
+      "lines": [
+        {
+          "speaker": "VIEILLARD",
+          "text": "J'ai connu cette ville avant Nova Déta. On était pauvres mais libres."
+        },
+        {
+          "speaker": "ALEX",
+          "text": "On sera libres à nouveau."
+        },
+        {
+          "speaker": "VIEILLARD",
+          "text": "Je l'espère encore."
+        }
+      ]
+    }
+  ]
+}

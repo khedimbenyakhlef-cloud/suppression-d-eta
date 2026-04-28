@@ -1,0 +1,175 @@
+[
+  {
+    "id": "q1_infiltration",
+    "title": "Infiltration Secteur Alpha",
+    "act": 1,
+    "type": "main",
+    "description": "Entrez dans le Secteur Alpha sans déclencher l'alarme générale.",
+    "objectives": [
+      {
+        "id": "enter",
+        "label": "Accéder au Secteur Alpha",
+        "required": true
+      },
+      {
+        "id": "terminal",
+        "label": "Pirater le terminal T-01",
+        "required": true
+      },
+      {
+        "id": "escape",
+        "label": "Exfiltration",
+        "required": true
+      }
+    ],
+    "rewards": {
+      "rep_citizens": 5,
+      "rep_deta": -10,
+      "score": 500
+    }
+  },
+  {
+    "id": "q1_sabotage",
+    "title": "Sabotage des réservoirs",
+    "act": 1,
+    "type": "main",
+    "description": "Contaminez les réservoirs de Déta Corp avec le Gaz Rire.",
+    "objectives": [
+      {
+        "id": "locate",
+        "label": "Localiser les 3 réservoirs",
+        "required": true
+      },
+      {
+        "id": "inject",
+        "label": "Injecter le Gaz Rire",
+        "required": true
+      },
+      {
+        "id": "photos",
+        "label": "Documenter pour la presse",
+        "required": false
+      }
+    ],
+    "rewards": {
+      "rep_citizens": 10,
+      "rep_deta": -15,
+      "score": 800
+    }
+  },
+  {
+    "id": "q2_protect",
+    "title": "Protection du Nova Marché",
+    "act": 1,
+    "type": "secondary",
+    "description": "Des mercenaires rackettent les marchands. Mettez fin à ça.",
+    "objectives": [
+      {
+        "id": "talk",
+        "label": "Parler au chef marchand",
+        "required": true
+      },
+      {
+        "id": "eliminate",
+        "label": "Éliminer 5 mercenaires racketteurs",
+        "required": true
+      }
+    ],
+    "rewards": {
+      "rep_citizens": 15,
+      "rep_merc": -8,
+      "score": 400
+    }
+  },
+  {
+    "id": "q_liam_past",
+    "title": "Le Passé de Liam",
+    "act": 2,
+    "type": "secondary",
+    "description": "Enquêtez sur le vrai passé de Liam dans l'Ancien Alger.",
+    "objectives": [
+      {
+        "id": "find_file",
+        "label": "Trouver le dossier secret dans la mosquée",
+        "required": true
+      },
+      {
+        "id": "decode",
+        "label": "Décoder le fichier (Lana)",
+        "required": true
+      },
+      {
+        "id": "confront",
+        "label": "Confronter Liam avec les preuves",
+        "required": false
+      }
+    ],
+    "rewards": {
+      "rep_citizens": 8,
+      "score": 600,
+      "unlock": "liam_mercy_option"
+    }
+  },
+  {
+    "id": "q_resistance_base",
+    "title": "La Base de la Résistance",
+    "act": 1,
+    "type": "side",
+    "description": "Localisez et rejoignez la résistance souterraine.",
+    "objectives": [
+      {
+        "id": "contact",
+        "label": "Contacter l'informateur",
+        "required": true
+      },
+      {
+        "id": "password",
+        "label": "Obtenir le mot de passe",
+        "required": true
+      },
+      {
+        "id": "enter",
+        "label": "Entrer dans la base",
+        "required": true
+      }
+    ],
+    "rewards": {
+      "rep_citizens": 20,
+      "score": 300,
+      "unlock": "resistance_shop"
+    }
+  },
+  {
+    "id": "q_final_boss",
+    "title": "La Tour Déta",
+    "act": 3,
+    "type": "main",
+    "description": "Montez au sommet de la Tour Déta et affrontez le Directeur Karim.",
+    "objectives": [
+      {
+        "id": "ascend",
+        "label": "Monter les 50 étages",
+        "required": true
+      },
+      {
+        "id": "liam",
+        "label": "Affronter Liam (Phase Finale)",
+        "required": true
+      },
+      {
+        "id": "karim",
+        "label": "Vaincre le Directeur Karim",
+        "required": true
+      },
+      {
+        "id": "ending",
+        "label": "Choisir le destin de Nova Déta",
+        "required": true
+      }
+    ],
+    "rewards": {
+      "rep_citizens": 50,
+      "score": 10000
+    }
+  }
+]

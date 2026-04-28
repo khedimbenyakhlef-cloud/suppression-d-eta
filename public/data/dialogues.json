@@ -1,0 +1,199 @@
+{
+  "act1": [
+    {
+      "id": "intro",
+      "speaker": "ALEX",
+      "text": "Nova Déta. Cette ville m'a tout pris. Ma famille. Ma liberté. Ils appellent ça le progrès. Moi j'appelle ça du poison.",
+      "choices": [
+        {
+          "text": "(Continuer)",
+          "next": "intro2"
+        }
+      ]
+    },
+    {
+      "id": "intro2",
+      "speaker": "LANA",
+      "text": "Alex. Écoute-moi. J'ai cartographié le réseau neural de Déta Corp. Il y a 4 terminaux. On pirate les 4, et on peut couper leur système de contrôle des gaz pour toujours.",
+      "choices": [
+        {
+          "text": "Combien de gardes ?",
+          "next": "intro3"
+        },
+        {
+          "text": "Et si ça foire ?",
+          "next": "intro3b"
+        }
+      ]
+    },
+    {
+      "id": "intro3",
+      "speaker": "ALEX",
+      "text": "Des gardes. J'en ai vu des centaines. Mais rien de tel que du Gaz Inferno pour nettoyer un couloir.",
+      "choices": [
+        {
+          "text": "En route.",
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "intro3b",
+      "speaker": "LANA",
+      "text": "Si ça foire... Nova Déta reste comme elle est. Et nous, on disparaît dans les conduits. Comme d'habitude.",
+      "choices": [
+        {
+          "text": "Pas question. On réussit.",
+          "next": null
+        }
+      ]
+    }
+  ],
+  "act2": [
+    {
+      "id": "chaos_start",
+      "speaker": "DR. FROST",
+      "text": "Alex ! Ça a mal tourné. Le Gaz Rire s'est répandu dans le Secteur 4. Les forces de l'ordre deviennent incontrôlables — ils rient et tirent en même temps.",
+      "choices": [
+        {
+          "text": "On neutralise ça comment ?",
+          "next": "chaos2"
+        },
+        {
+          "text": "Parfait. Ça nous couvre.",
+          "next": "chaos2b"
+        }
+      ]
+    },
+    {
+      "id": "chaos2",
+      "speaker": "DR. FROST",
+      "text": "Il me faut 3 minutes au terminal central. Tu couvres Lana pendant qu'elle hack le système de ventilation.",
+      "choices": [
+        {
+          "text": "Je suis votre bouclier.",
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "chaos2b",
+      "speaker": "LANA",
+      "text": "Alex... des civils sont pris dans le gaz. Des enfants. On ne peut pas les laisser.",
+      "choices": [
+        {
+          "text": "(Aider les civils — +Citoyens)",
+          "next": null,
+          "rep": {
+            "citizens": 15
+          }
+        },
+        {
+          "text": "(Ignorer — avancer)",
+          "next": null,
+          "rep": {
+            "citizens": -10
+          }
+        }
+      ]
+    }
+  ],
+  "act3": [
+    {
+      "id": "liam_reveal",
+      "speaker": "LIAM",
+      "text": "Surpris, Alex ? C'est moi, ton partenaire de mission de 2041. Déta m'a racheté. Ils t'ont racheté aussi — tu ne le sais pas encore.",
+      "choices": [
+        {
+          "text": "Tu mens.",
+          "next": "liam2"
+        },
+        {
+          "text": "Qu'est-ce qu'ils t'ont donné ?",
+          "next": "liam2b"
+        }
+      ]
+    },
+    {
+      "id": "liam2",
+      "speaker": "LIAM",
+      "text": "Ton dossier neural. Tes souvenirs. Tout ce qui t'a amené ici — c'est une simulation de conditionnement. Tu combats pour eux depuis le début.",
+      "choices": [
+        {
+          "text": "Je ne te crois pas.",
+          "next": "liam3"
+        },
+        {
+          "text": "...Prouve-le.",
+          "next": "liam3b"
+        }
+      ]
+    },
+    {
+      "id": "liam2b",
+      "speaker": "LIAM",
+      "text": "La vie de ma fille. Ils la tenaient en otage dans la Tour 7. J'ai choisi ma famille. Tu aurais fait pareil.",
+      "choices": [
+        {
+          "text": "(Compassion — +Merc)",
+          "next": "liam3",
+          "rep": {
+            "merc": 10
+          }
+        },
+        {
+          "text": "Non. Jamais.",
+          "next": "liam3",
+          "rep": {
+            "deta": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "liam3",
+      "speaker": "ALEX",
+      "text": "Peu importe. Déta doit tomber. Si tu es dans leur camp — tu tombes avec eux.",
+      "choices": [
+        {
+          "text": "(Affronter Liam)",
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "liam3b",
+      "speaker": "LIAM",
+      "text": "(Il sort un datapad) Voilà. Tes ordres de mission originaux. Signé : Directeur Karim, Déta Intelligence.",
+      "choices": [
+        {
+          "text": "(Désespéré) Alors c'est quoi la vérité ?",
+          "next": "liam3c"
+        }
+      ]
+    },
+    {
+      "id": "liam3c",
+      "speaker": "LIAM",
+      "text": "La vérité : cette ville souffre pour de vrai. Peu importe qui tu es — tu peux encore choisir de la libérer.",
+      "choices": [
+        {
+          "text": "(Épargner Liam — Fin A)",
+          "next": null,
+          "rep": {
+            "citizens": 20,
+            "law": 10
+          }
+        },
+        {
+          "text": "(Tuer Liam — Fin B)",
+          "next": null,
+          "rep": {
+            "merc": 15,
+            "deta": -25
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "nova_deta",
+    "title": "Nova Déta",
+    "category": "Lieux",
+    "content": "Ville fictive algérienne de 15 millions d'habitants fondée en 2031 sur les ruines de plusieurs wilayas. Construite par Déta Corp comme 'ville modèle', elle est rapidement devenue un laboratoire de contrôle social. L'air y est filtré, l'eau rationnée, les quartiers codifiés selon la classe sociale."
+  },
+  {
+    "id": "deta_corp",
+    "title": "Déta Corporation",
+    "category": "Factions",
+    "content": "Conglomérat fondé en 2025 par le Directeur Karim après avoir racheté des brevets militaires algériens. Spécialisée en biochimie, IA de surveillance et urbanisme contrôlé. Emploie 40% de la population de Nova Déta — directement ou indirectement. Motto : 'Un air pur pour une ville pure'."
+  },
+  {
+    "id": "gas_lore",
+    "title": "Les 4 Gaz",
+    "category": "Technologie",
+    "content": "Les gaz de Déta Corp étaient initialement développés à des fins médicales. Le Gaz Inerte devait calmer les traumatismes de guerre; le Gaz Rire traiter la dépression collective. Déta Corp les a militarisés en 2039 pour 'maintenir l'ordre social'. Alex et Lana les ont retournés contre leurs créateurs."
+  },
+  {
+    "id": "alex_lore",
+    "title": "Alex — Biographie",
+    "category": "Personnages",
+    "content": "Né en 2018 à Oran. Mercenaire cybernétique formé par la 3ème Brigade Alpha. A travaillé pour Déta Corp de 2038 à 2041 — période dont il n'a aucun souvenir clair. Ses augmentations neurales incluent des réflexes améliorés et une résistance aux gaz. Partenaire de Lana depuis 2043."
+  },
+  {
+    "id": "lana_lore",
+    "title": "Lana — Biographie",
+    "category": "Personnages",
+    "content": "Née en 2022 à Alger. Hackeuse autodidacte. A infiltré le réseau NeuroNet de Déta Corp à 16 ans, exposant les premiers protocoles de contrôle mental. Recherchée par Déta depuis 2038. Ses implants neuraux lui permettent d'interfacer directement avec les systèmes informatiques à moins de 50 mètres."
+  },
+  {
+    "id": "liam_lore",
+    "title": "Liam — Biographie",
+    "category": "Personnages",
+    "content": "Identité réelle : Amir Benahmed, né en 2015 à Constantine. Ancien partenaire d'Alex dans la Brigade Alpha. Sa fille Sonia a été prise en otage par Déta Corp en 2041. Il a accepté de travailler pour eux en échange de sa vie. Porte un masque facial pour dissimuler les cicatrices de l'expérimentation neurale."
+  },
+  {
+    "id": "dr_frost_lore",
+    "title": "Dr. Frost",
+    "category": "Personnages",
+    "content": "Nom réel : Dr. Farida Bouzid. Chimiste de renom, ancienne professeure à l'Université d'Alger. Recrutée de force par Déta Corp en 2036 pour développer les gaz de contrôle. Sabote secrètement leurs formules depuis 2042. Son surnom vient du Gaz Inerte qu'elle a créé — 'Celui qui gèle les âmes'."
+  },
+  {
+    "id": "resistance",
+    "title": "La Résistance",
+    "category": "Factions",
+    "content": "Groupe clandestin né en 2044 dans les souterrains de Nova Déta. Composé d'anciens militaires, hackers, chimistes et civils. Utilise les vieux tunnels de métro comme base. Leur symbole : un poing tenant une fiole de gaz. Contact principal : une IA appelée 'Dzaïr' qui gère leurs communications."
+  },
+  {
+    "id": "neuronet",
+    "title": "NeuroNet",
+    "category": "Technologie",
+    "content": "Réseau neural propriétaire de Déta Corp. Chaque citoyen est connecté à la naissance via un implant obligatoire. Censé 'optimiser le bien-être collectif', il permet en réalité la surveillance totale des pensées, émotions et intentions. Lana est la seule personne à avoir créé un firewall personnel contre lui."
+  },
+  {
+    "id": "karim",
+    "title": "Directeur Karim",
+    "category": "Personnages",
+    "content": "PDG et fondateur de Déta Corp. Âge inconnu — rumeurs d'augmentations anti-vieillissement. Né dans une famille de militaires. A transformé une startup biochimique en empire en moins de 20 ans. Croit sincèrement que le contrôle total est la seule voie vers la paix. Ne s'est jamais rendu dans les bas quartiers de Nova Déta."
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "guard",
+    "name": "Garde Déta",
+    "hp": 80,
+    "damage": 15,
+    "speed": 80,
+    "sight": 200,
+    "behavior": "patrol",
+    "reward": 100,
+    "type": "humanoid",
+    "desc": "Garde standard de Déta Corp. Armé d'un P7-Nova. Faible perception nocturne."
+  },
+  {
+    "id": "soldier",
+    "name": "Soldat d'Élite",
+    "hp": 150,
+    "damage": 25,
+    "speed": 100,
+    "sight": 250,
+    "behavior": "aggressive",
+    "reward": 250,
+    "type": "humanoid",
+    "desc": "Équipé d'une armure légère. Réagit aux gaz. Communique par radio."
+  },
+  {
+    "id": "drone_scout",
+    "name": "Drone Éclaireur",
+    "hp": 40,
+    "damage": 10,
+    "speed": 160,
+    "sight": 300,
+    "behavior": "patrol_aerial",
+    "reward": 150,
+    "type": "drone",
+    "desc": "Vol silencieux. Caméra 360°. Appelle des renforts si joueur détecté."
+  },
+  {
+    "id": "drone_combat",
+    "name": "Drone Combat",
+    "hp": 80,
+    "damage": 30,
+    "speed": 140,
+    "sight": 280,
+    "behavior": "aggressive_aerial",
+    "reward": 350,
+    "type": "drone",
+    "desc": "Armé d'un laser. Immunisé aux gaz. Vulnérable aux EMP."
+  },
+  {
+    "id": "heavy",
+    "name": "Soldat Lourd",
+    "hp": 250,
+    "damage": 40,
+    "speed": 60,
+    "sight": 180,
+    "behavior": "aggressive",
+    "reward": 400,
+    "type": "humanoid",
+    "desc": "Armure renforcée. Résiste au Gaz Inferno 3s. Lance des grenades."
+  },
+  {
+    "id": "sniper_enemy",
+    "name": "Tireur d'élite",
+    "hp": 60,
+    "damage": 100,
+    "speed": 40,
+    "sight": 400,
+    "behavior": "stationary",
+    "reward": 300,
+    "type": "humanoid",
+    "desc": "Posté en hauteur. Un tir = danger extrême. Élimination prioritaire."
+  },
+  {
+    "id": "hacker_enemy",
+    "name": "Counter-Hacker",
+    "hp": 70,
+    "damage": 20,
+    "speed": 90,
+    "sight": 220,
+    "behavior": "disruptive",
+    "reward": 350,
+    "type": "humanoid",
+    "desc": "Annule les hacks de Lana à portée. Cible prioritaire pour elle."
+  },
+  {
+    "id": "liam",
+    "name": "Liam — L'Adversaire",
+    "hp": 300,
+    "damage": 35,
+    "speed": 120,
+    "sight": 400,
+    "behavior": "boss_phase",
+    "reward": 5000,
+    "type": "boss",
+    "desc": "Ancien partenaire d'Alex. Cybernétique augmenté. 3 phases de combat."
+  },
+  {
+    "id": "dr_frost",
+    "name": "Dr. Frost",
+    "hp": 180,
+    "damage": 28,
+    "speed": 110,
+    "sight": 300,
+    "behavior": "support_boss",
+    "reward": 2000,
+    "type": "boss",
+    "desc": "Chimiste de Déta Corp. Déploie des gaz toxiques. Allié potentiel."
+  },
+  {
+    "id": "riot_cop",
+    "name": "Policier Anti-Émeute",
+    "hp": 120,
+    "damage": 20,
+    "speed": 85,
+    "sight": 210,
+    "behavior": "faction_law",
+    "reward": 200,
+    "type": "humanoid",
+    "desc": "Forces de l'ordre corrompues. Hostile si réputation Loi < 30."
+  }
+]

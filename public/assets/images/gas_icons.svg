@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+<rect width="400" height="120" fill="#050b14"/>
+<rect x="10" y="10" width="80" height="100" rx="4" fill="#0a1525" stroke="#ff4500" stroke-width="1.5"/>
+<circle cx="50" cy="45" r="22" fill="#ff4500" opacity="0.2"/>
+<circle cx="50" cy="45" r="14" fill="#ff4500" opacity="0.5"/>
+<text x="50" y="52" font-size="18" text-anchor="middle">🔥</text>
+<text x="50" y="80" font-size="9" font-family="monospace" fill="#ff4500" text-anchor="middle">INFERNO</text>
+<text x="50" y="96" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">Brûlures</text>
+<rect x="110" y="10" width="80" height="100" rx="4" fill="#0a1525" stroke="#aaff00" stroke-width="1.5"/>
+<circle cx="150" cy="45" r="22" fill="#aaff00" opacity="0.2"/>
+<circle cx="150" cy="45" r="14" fill="#aaff00" opacity="0.5"/>
+<text x="150" y="52" font-size="18" text-anchor="middle">😂</text>
+<text x="150" y="80" font-size="9" font-family="monospace" fill="#aaff00" text-anchor="middle">RIRE</text>
+<text x="150" y="96" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">Désorient.</text>
+<rect x="210" y="10" width="80" height="100" rx="4" fill="#0a1525" stroke="#88aaff" stroke-width="1.5"/>
+<circle cx="250" cy="45" r="22" fill="#88aaff" opacity="0.2"/>
+<circle cx="250" cy="45" r="14" fill="#88aaff" opacity="0.5"/>
+<text x="250" y="52" font-size="18" text-anchor="middle">💠</text>
+<text x="250" y="80" font-size="9" font-family="monospace" fill="#88aaff" text-anchor="middle">INERTE</text>
+<text x="250" y="96" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">Paralysie</text>
+<rect x="310" y="10" width="80" height="100" rx="4" fill="#0a1525" stroke="#888899" stroke-width="1.5"/>
+<circle cx="350" cy="45" r="22" fill="#888899" opacity="0.2"/>
+<circle cx="350" cy="45" r="14" fill="#888899" opacity="0.5"/>
+<text x="350" y="52" font-size="18" text-anchor="middle">🌫️</text>
+<text x="350" y="80" font-size="9" font-family="monospace" fill="#888899" text-anchor="middle">FUME</text>
+<text x="350" y="96" font-size="8" font-family="monospace" fill="#b0c8e0" text-anchor="middle">Couverture</text>
+</svg>

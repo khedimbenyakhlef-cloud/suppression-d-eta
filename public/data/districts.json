@@ -1,0 +1,112 @@
+[
+  {
+    "id": "sector1",
+    "name": "Secteur Alpha — Centre Financier",
+    "faction": "deta",
+    "threat": 3,
+    "description": "Siège social de Déta Corp. Sécurité maximale. Drones omniprésents.",
+    "quests": [
+      "q1_infiltration",
+      "q1_sabotage"
+    ],
+    "unlocked": true,
+    "x": 0,
+    "y": 0,
+    "w": 16,
+    "h": 12
+  },
+  {
+    "id": "sector2",
+    "name": "Secteur Beta — Nova Marché",
+    "faction": "citizens",
+    "threat": 1,
+    "description": "Zone commerciale populaire. Civils nombreux. Milice citoyenne présente.",
+    "quests": [
+      "q2_protect",
+      "q2_merchant"
+    ],
+    "unlocked": true,
+    "x": 17,
+    "y": 0,
+    "w": 16,
+    "h": 12
+  },
+  {
+    "id": "sector3",
+    "name": "Secteur Gamma — Port Industriel",
+    "faction": "mercenaries",
+    "threat": 2,
+    "description": "Mercenaires contrôlent le port. Contrebande de gaz. Alliances possibles.",
+    "quests": [
+      "q3_cargo",
+      "q3_alliance"
+    ],
+    "unlocked": true,
+    "x": 0,
+    "y": 13,
+    "w": 16,
+    "h": 12
+  },
+  {
+    "id": "sector4",
+    "name": "Secteur Delta — Banlieue Chimique",
+    "faction": "mixed",
+    "threat": 4,
+    "description": "Zone dévastée par les fuites de gaz. Habitants mutés. Accès restreint.",
+    "quests": [
+      "q4_survivors",
+      "q4_source"
+    ],
+    "unlocked": false,
+    "x": 17,
+    "y": 13,
+    "w": 16,
+    "h": 12
+  },
+  {
+    "id": "sector5",
+    "name": "Secteur Epsilon — Tour Déta",
+    "faction": "deta",
+    "threat": 5,
+    "description": "Le cœur du pouvoir. Directeur Karim au sommet. Fin du jeu.",
+    "quests": [
+      "q_final_boss"
+    ],
+    "unlocked": false,
+    "x": 33,
+    "y": 0,
+    "w": 16,
+    "h": 25
+  },
+  {
+    "id": "sector6",
+    "name": "Les Souterrains",
+    "faction": "resistance",
+    "threat": 2,
+    "description": "Base de la Résistance. Lana y a ses contacts. Achats d'équipements.",
+    "quests": [
+      "q_resistance_base"
+    ],
+    "unlocked": true,
+    "x": 0,
+    "y": 26,
+    "w": 25,
+    "h": 14
+  },
+  {
+    "id": "sector7",
+    "name": "Secteur Zêta — Ancien Alger",
+    "faction": "citizens",
+    "threat": 1,
+    "description": "Quartier historique. Monuments d'Algérie originelle. Refuge des artistes.",
+    "quests": [
+      "q_culture",
+      "q_liam_past"
+    ],
+    "unlocked": true,
+    "x": 26,
+    "y": 26,
+    "w": 24,
+    "h": 14
+  }
+]

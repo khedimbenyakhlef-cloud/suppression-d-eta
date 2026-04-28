@@ -1,0 +1,212 @@
+{
+  "title": "SUPPRESSION DÉTA — Script Narratif Complet",
+  "isbn": "978-9969-521-15-3",
+  "author": "Khedim Benyakhlef",
+  "publisher": "Maison d'Édition Ahlem",
+  "year": 2026,
+  "acts": [
+    {
+      "number": 1,
+      "title": "Le Contrat",
+      "synopsis": "Alex et Lana acceptent une mission de sabotage contre Déta Corp. Ce qui devait être une simple infiltration devient le début d'une révolution.",
+      "scenes": [
+        {
+          "id": "1-1",
+          "location": "Les Souterrains",
+          "time": "Nuit",
+          "characters": [
+            "Alex",
+            "Lana"
+          ],
+          "description": "Alex et Lana reçoivent le briefing de la Résistance. La cible : le réseau neural de Déta Corp.",
+          "dialogue_count": 12,
+          "duration_minutes": 8
+        },
+        {
+          "id": "1-2",
+          "location": "Secteur Alpha — Périmètre",
+          "time": "Nuit",
+          "characters": [
+            "Alex",
+            "Garde x3"
+          ],
+          "description": "Alex infiltre les premières lignes de défense de Déta Corp. Premier contact avec le Gaz Inferno.",
+          "dialogue_count": 4,
+          "duration_minutes": 15,
+          "combat": true
+        },
+        {
+          "id": "1-3",
+          "location": "Secteur Alpha — Terminal T-01",
+          "time": "Nuit",
+          "characters": [
+            "Lana",
+            "Contre-hacker"
+          ],
+          "description": "Lana tente de pirater le premier terminal. Race contre la montre contre le système de sécurité.",
+          "dialogue_count": 6,
+          "duration_minutes": 10,
+          "hack_sequence": true
+        },
+        {
+          "id": "1-4",
+          "location": "Secteur Alpha — Toit",
+          "time": "Aube",
+          "characters": [
+            "Alex",
+            "Lana",
+            "Garde x5"
+          ],
+          "description": "Embuscade. Les gardes ont été prévenus. Combat désespéré sur les toits de Nova Déta.",
+          "dialogue_count": 8,
+          "duration_minutes": 12,
+          "combat": true
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Chaos — Gaz Rire",
+      "synopsis": "Une fuite de Gaz Rire ravage le Secteur Beta. Dans le chaos, Alex et Lana découvrent que Liam est l'Adversaire Masqué.",
+      "scenes": [
+        {
+          "id": "2-1",
+          "location": "Nova Marché",
+          "time": "Matin",
+          "characters": [
+            "Alex",
+            "Lana",
+            "Civils",
+            "Dr. Frost"
+          ],
+          "description": "Le Gaz Rire se répand. Les civils rient et fuient dans tous les sens. Dr. Frost apparaît, proposant son aide.",
+          "dialogue_count": 15,
+          "duration_minutes": 12
+        },
+        {
+          "id": "2-2",
+          "location": "Centrale de Ventilation",
+          "time": "Matin",
+          "characters": [
+            "Lana",
+            "Drones x4"
+          ],
+          "description": "Lana doit pirater le système de ventilation pour neutraliser le gaz. Mais les drones de Déta gardent le poste.",
+          "dialogue_count": 3,
+          "duration_minutes": 18,
+          "combat": true,
+          "hack_sequence": true
+        },
+        {
+          "id": "2-3",
+          "location": "Secteur Beta — Carrefour",
+          "time": "Midi",
+          "characters": [
+            "Alex",
+            "Liam (masqué)"
+          ],
+          "description": "Alex rencontre l'Adversaire Masqué pour la première fois. Combat brutal. Le masque commence à se fissurer.",
+          "dialogue_count": 10,
+          "duration_minutes": 20,
+          "combat": true,
+          "boss_phase": 1
+        },
+        {
+          "id": "2-4",
+          "location": "Toits du Secteur Beta",
+          "time": "Soir",
+          "characters": [
+            "Alex",
+            "Lana",
+            "Dr. Frost"
+          ],
+          "description": "Retrait tactique. Dr. Frost révèle qu'il connaît l'Adversaire. La tension monte entre Alex et Lana.",
+          "dialogue_count": 18,
+          "duration_minutes": 10
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "L'Adversaire Masqué",
+      "synopsis": "La vérité sur Liam, sur le passé d'Alex, et le destin de Nova Déta. Tout converge vers la Tour Déta.",
+      "scenes": [
+        {
+          "id": "3-1",
+          "location": "Les Souterrains — Base",
+          "time": "Nuit",
+          "characters": [
+            "Alex",
+            "Lana",
+            "Dr. Frost",
+            "Chef Résistance"
+          ],
+          "description": "Le plan final. Monter les 50 étages de la Tour Déta. Affronter Liam. Vaincre le Directeur Karim.",
+          "dialogue_count": 20,
+          "duration_minutes": 15
+        },
+        {
+          "id": "3-2",
+          "location": "Tour Déta — Étages 1-25",
+          "time": "Nuit",
+          "characters": [
+            "Alex",
+            "Gardes x30",
+            "Drones x10"
+          ],
+          "description": "L'ascension. Chaque étage est une forteresse. Le système de gaz est retourné contre les envahisseurs.",
+          "dialogue_count": 5,
+          "duration_minutes": 30,
+          "combat": true
+        },
+        {
+          "id": "3-3",
+          "location": "Tour Déta — Étage 26-49",
+          "time": "Nuit",
+          "characters": [
+            "Lana",
+            "Counter-hackers x5"
+          ],
+          "description": "Lana neutralise les systèmes de sécurité un par un. Mais quelque chose cloche dans les données du réseau neural.",
+          "dialogue_count": 8,
+          "duration_minutes": 25,
+          "hack_sequence": true
+        },
+        {
+          "id": "3-4",
+          "location": "Tour Déta — Sommet",
+          "time": "Aube",
+          "characters": [
+            "Alex",
+            "Liam",
+            "Dr. Frost",
+            "Directeur Karim"
+          ],
+          "description": "La confrontation finale. Liam révèle la vérité. Le choix qui détermine la fin de l'histoire.",
+          "dialogue_count": 35,
+          "duration_minutes": 20,
+          "combat": true,
+          "boss_phase": 3,
+          "branching_endings": true
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Épilogue",
+      "synopsis": "Les conséquences des choix du joueur. Nova Déta, un mois après la chute de Déta Corp.",
+      "scenes": [
+        {
+          "id": "4-1",
+          "location": "Nova Déta — Vue Aérienne",
+          "time": "Jour",
+          "characters": [],
+          "description": "Narration off. La ville se reconstruira différemment selon les fins choisies. Chaque faction tire ses conclusions.",
+          "dialogue_count": 8,
+          "duration_minutes": 5,
+          "cutscene": true
+        }
+      ]
+    }
+  ]
+}

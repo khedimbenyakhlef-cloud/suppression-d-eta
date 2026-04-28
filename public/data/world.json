@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "game": "Suppression Déta",
+  "isbn": "978-9969-521-15-3",
+  "world_name": "Nova Déta",
+  "year": 2047,
+  "levels": [
+    "level_act1",
+    "level_act2",
+    "level_act3"
+  ],
+  "total_districts": 7,
+  "factions": [
+    "citizens",
+    "law_enforcement",
+    "mercenaries",
+    "deta_corp"
+  ],
+  "gas_types": [
+    "inferno",
+    "rire",
+    "inerte",
+    "fume"
+  ],
+  "characters": [
+    "alex",
+    "lana",
+    "liam",
+    "dr_frost",
+    "directeur_karim"
+  ],
+  "endings": [
+    "A_hero",
+    "B_revolution",
+    "C_integration",
+    "D_balance"
+  ]
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "first_blood",
+    "name": "Premier Sang",
+    "desc": "Éliminer le premier ennemi",
+    "secret": false,
+    "points": 10,
+    "icon": "⚔️"
+  },
+  {
+    "id": "gas_master",
+    "name": "Maître des Gaz",
+    "desc": "Déployer chaque type de gaz au moins une fois",
+    "secret": false,
+    "points": 25,
+    "icon": "⚗️"
+  },
+  {
+    "id": "hacker_pro",
+    "name": "Pro du Hack",
+    "desc": "Réussir 10 piratages sans échec",
+    "secret": false,
+    "points": 30,
+    "icon": "💻"
+  },
+  {
+    "id": "pacifist",
+    "name": "Pacifiste",
+    "desc": "Terminer l'Acte 1 sans tuer de civils",
+    "secret": false,
+    "points": 20,
+    "icon": "🕊️"
+  },
+  {
+    "id": "berserker",
+    "name": "Berserker",
+    "desc": "Tuer 50 ennemis avec Alex",
+    "secret": false,
+    "points": 30,
+    "icon": "🔥"
+  },
+  {
+    "id": "ghost",
+    "name": "Fantôme",
+    "desc": "Ne jamais déclencher l'alarme générale",
+    "secret": true,
+    "points": 50,
+    "icon": "👻"
+  },
+  {
+    "id": "liam_mercy",
+    "name": "Miséricorde",
+    "desc": "Épargner Liam dans la Phase III",
+    "secret": false,
+    "points": 40,
+    "icon": "🤝"
+  },
+  {
+    "id": "all_endings",
+    "name": "Toutes les Fins",
+    "desc": "Découvrir les 4 fins",
+    "secret": true,
+    "points": 100,
+    "icon": "🏆"
+  },
+  {
+    "id": "rep_legend",
+    "name": "Légende de Nova Déta",
+    "desc": "Atteindre 90+ réputation avec 3 factions",
+    "secret": false,
+    "points": 60,
+    "icon": "⭐"
+  },
+  {
+    "id": "gas_combo",
+    "name": "Alchimiste",
+    "desc": "Utiliser 2 gaz différents dans la même zone",
+    "secret": false,
+    "points": 20,
+    "icon": "🔮"
+  },
+  {
+    "id": "speedrun",
+    "name": "Mercenaire Rapide",
+    "desc": "Terminer l'Acte 1 en moins de 20 minutes",
+    "secret": true,
+    "points": 50,
+    "icon": "⚡"
+  },
+  {
+    "id": "lore_reader",
+    "name": "Archiviste",
+    "desc": "Lire toutes les entrées du Codex",
+    "secret": false,
+    "points": 25,
+    "icon": "📚"
+  },
+  {
+    "id": "skill_max",
+    "name": "Augmenté",
+    "desc": "Débloquer 15 compétences",
+    "secret": false,
+    "points": 40,
+    "icon": "🧬"
+  },
+  {
+    "id": "no_damage",
+    "name": "Intouchable",
+    "desc": "Terminer un acte sans perdre de PV",
+    "secret": true,
+    "points": 80,
+    "icon": "🛡️"
+  },
+  {
+    "id": "karim_down",
+    "name": "La Chute de Karim",
+    "desc": "Vaincre le Directeur Karim",
+    "secret": false,
+    "points": 75,
+    "icon": "👑"
+  },
+  {
+    "id": "resistance_ally",
+    "name": "Allié de la Résistance",
+    "desc": "Rejoindre officiellement la Résistance",
+    "secret": false,
+    "points": 15,
+    "icon": "✊"
+  },
+  {
+    "id": "gas_immunity",
+    "name": "Anti-Gaz",
+    "desc": "Survivre dans le Gaz Inferno pendant 30 secondes",
+    "secret": true,
+    "points": 35,
+    "icon": "😷"
+  },
+  {
+    "id": "drone_killer",
+    "name": "Anti-Drone",
+    "desc": "Détruire 20 drones Déta",
+    "secret": false,
+    "points": 30,
+    "icon": "🚁"
+  },
+  {
+    "id": "dialogue_complete",
+    "name": "Diplomate",
+    "desc": "Voir tous les dialogues d'un personnage",
+    "secret": false,
+    "points": 20,
+    "icon": "💬"
+  },
+  {
+    "id": "nova_free",
+    "name": "Nova Déta Libre",
+    "desc": "Obtenir la Fin A — Héros du Peuple",
+    "secret": false,
+    "points": 100,
+    "icon": "🆓"
+  }
+]
