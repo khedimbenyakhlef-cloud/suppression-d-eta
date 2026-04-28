@@ -1,0 +1,147 @@
+<style>
+#mobile-controls {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 180px; z-index: 1000; pointer-events: none;
+}
+@media (max-width: 768px) { #mobile-controls { display: block; } }
+
+.joystick-zone {
+  position: absolute; left: 20px; bottom: 20px;
+  width: 140px; height: 140px; pointer-events: auto;
+}
+.joystick-base {
+  width: 140px; height: 140px;
+  background: rgba(0,229,255,0.1); border: 2px solid rgba(0,229,255,0.3);
+  border-radius: 50%; position: absolute; top: 0; left: 0;
+}
+.joystick-thumb {
+  width: 70px; height: 70px;
+  background: rgba(0,229,255,0.5); border-radius: 50%;
+  position: absolute; top: 35px; left: 35px; transition: none;
+}
+.action-buttons {
+  position: absolute; right: 10px; bottom: 20px;
+  display: flex; flex-wrap: wrap; gap: 8px; width: 180px; pointer-events: auto;
+}
+.action-btn {
+  width: 55px; height: 55px; border-radius: 50%;
+  background: rgba(5,11,20,0.9); border: 2px solid var(--clr-cyan);
+  color: var(--clr-cyan); font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; user-select: none; touch-action: manipulation;
+}
+.action-btn:active { background: rgba(0,229,255,0.3); }
+</style>
+
+<div id="mobile-controls">
+  <div class="joystick-zone" id="joystickZone">
+    <div class="joystick-base"></div>
+    <div class="joystick-thumb" id="joystickThumb"></div>
+  </div>
+  <div class="action-buttons">
+    <button class="action-btn" id="btnShoot">🔫</button>
+    <button class="action-btn" id="btnGas">🔥</button>
+    <button class="action-btn" id="btnHack">💻</button>
+    <button class="action-btn" id="btnInteract">👆</button>
+    <button class="action-btn" id="btnPause">⏸️</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  if (!('ontouchstart' in window)) return; // Uniquement tactile
+
+  var keys = window.keys;
+  var joystickZone = document.getElementById('joystickZone');
+  var thumb = document.getElementById('joystickThumb');
+  var activeTouch = null, baseX, baseY;
+
+  joystickZone.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    var touch = e.changedTouches[0];
+    if (!activeTouch) {
+      activeTouch = touch.identifier;
+      var rect = joystickZone.getBoundingClientRect();
+      baseX = rect.left + rect.width/2;
+      baseY = rect.top + rect.height/2;
+      updateJoystick(touch.clientX, touch.clientY);
+    }
+  });
+
+  joystickZone.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    for (var i = 0; i < e.changedTouches.length; i++) {
+      var touch = e.changedTouches[i];
+      if (touch.identifier === activeTouch) {
+        updateJoystick(touch.clientX, touch.clientY);
+        break;
+      }
+    }
+  });
+
+  joystickZone.addEventListener('touchend', function(e) {
+    e.preventDefault();
+    for (var i = 0; i < e.changedTouches.length; i++) {
+      if (e.changedTouches[i].identifier === activeTouch) {
+        activeTouch = null;
+        resetJoystick();
+        break;
+      }
+    }
+  });
+
+  function updateJoystick(clientX, clientY) {
+    var dx = clientX - baseX;
+    var dy = clientY - baseY;
+    var maxDist = 35;
+    var dist = Math.sqrt(dx*dx+dy*dy);
+    var clamped = Math.min(dist, maxDist);
+    var angle = Math.atan2(dy, dx);
+    var tx = 70 + Math.cos(angle) * clamped;
+    var ty = 70 + Math.sin(angle) * clamped;
+    thumb.style.left = (tx - 35) + 'px';
+    thumb.style.top = (ty - 35) + 'px';
+    keys['KeyW'] = dy < -0.3 * clamped;
+    keys['KeyS'] = dy > 0.3 * clamped;
+    keys['KeyA'] = dx < -0.3 * clamped;
+    keys['KeyD'] = dx > 0.3 * clamped;
+  }
+
+  function resetJoystick() {
+    thumb.style.left = '35px';
+    thumb.style.top = '35px';
+    keys['KeyW'] = keys['KeyS'] = keys['KeyA'] = keys['KeyD'] = false;
+  }
+
+  // Boutons d'action
+  document.getElementById('btnShoot').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    var canvas = document.getElementById('gameCanvas');
+    var ev = new MouseEvent('click', { bubbles: true, clientX: canvas.getBoundingClientRect().left + canvas.width/2, clientY: canvas.getBoundingClientRect().top + canvas.height/2 });
+    canvas.dispatchEvent(ev);
+  });
+
+  document.getElementById('btnGas').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if (window.gameState && window.gameState.running) {
+      window.deployGas(window.gameState.selectedGas, window.player.x, window.player.y);
+    }
+  });
+
+  document.getElementById('btnHack').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if (typeof window.startHackMinigame === 'function') window.startHackMinigame();
+  });
+
+  document.getElementById('btnInteract').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if (typeof window.interact === 'function') window.interact();
+  });
+
+  document.getElementById('btnPause').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if (typeof window.pauseGame === 'function') window.pauseGame();
+  });
+})();
+</script>
