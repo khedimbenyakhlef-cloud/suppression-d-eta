@@ -3355,7 +3355,7 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
 }
 
-function startNewGame() {
+function startNewGame_ORIG() {
   showScreen('screen-loading');
   document.getElementById('loadingTip').textContent = 'Génération de Nova Déta...';
 
@@ -3917,14 +3917,14 @@ document.addEventListener('keydown', e => {
 });
 
 // ── Enhanced startNewGame to init audio & weapons ─────────────
-const _origStartNewGame = startNewGame;
-function startNewGame() {
+
+function startNewGame_ORIG() {
   if (!audioCtx) initAudio();
   if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
   unlockedAchievements.clear();
   gameState.gasUsed = {};
   equipWeapon('pistol');
-  _origStartNewGame();
+  startNewGame_ORIG();
 }
 
 // ── Play music when game starts ───────────────────────────────
