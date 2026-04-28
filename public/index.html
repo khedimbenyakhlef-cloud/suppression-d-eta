@@ -3918,7 +3918,7 @@ document.addEventListener('keydown', e => {
 
 // ── Enhanced startNewGame to init audio & weapons ─────────────
 
-function startNewGame_ORIG() {
+function startNewGame() {
   if (!audioCtx) initAudio();
   if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
   unlockedAchievements.clear();
