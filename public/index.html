@@ -3916,16 +3916,6 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// ── Enhanced startNewGame to init audio & weapons ─────────────
-const _origStartNewGame = startNewGame;
-function startNewGame() {
-  if (!audioCtx) initAudio();
-  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-  unlockedAchievements.clear();
-  gameState.gasUsed = {};
-  equipWeapon('pistol');
-  _origStartNewGame();
-}
 
 // ── Play music when game starts ───────────────────────────────
 const _origAdvanceAct = advanceAct;
