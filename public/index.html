@@ -3919,13 +3919,12 @@ document.addEventListener('keydown', e => {
 // ── Enhanced startNewGame to init audio & weapons ─────────────
 
 function startNewGame() {
+  // Init audio & systems
   if (!audioCtx) initAudio();
   if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
   unlockedAchievements.clear();
-  gameState.gasUsed = {};
+  if (!gameState.gasUsed) gameState.gasUsed = {};
   equipWeapon('pistol');
-  startNewGame_ORIG();
-}
 
 // ── Play music when game starts ───────────────────────────────
 const _origAdvanceAct = advanceAct;
