@@ -4028,6 +4028,16 @@ document.getElementById('gameCanvas').addEventListener('click', (e) => {
       animateParticles();
     }, 2000);
   })();
+
+  // -- Demarrage fiable de l'intro --
+  (function() {
+    setTimeout(function() {
+      document.getElementById("screen-loading").classList.remove("active");
+      document.getElementById("screen-intro").classList.add("active");
+      initParticles();
+      animateParticles();
+    }, 2000);
+  })();
 </script>
 </body>
 </html>
