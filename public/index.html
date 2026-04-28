@@ -3355,6 +3355,60 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
 }
 
+function startNewGame_ORIG() {
+  showScreen('screen-loading');
+  document.getElementById('loadingTip').textContent = 'Génération de Nova Déta...';
+
+  // Reset state
+  Object.assign(gameState, {
+    running: false, paused: false, currentChar: 'alex', selectedGas: 'inferno',
+    hp: 100, maxHp: 100, stamina: 100, maxStamina: 100, hackPower: 80, maxHack: 100,
+    score: 0, skillPoints: 3, skills: {}, kills: 0, gasDeployed: 0, hacksDone: 0,
+    time: 0, act: 1, bossHp: 300, bossMaxHp: 300, bossPhase: 1, bossActive: false,
+    inGas: false, currentGasType: null, gasZones: [], entities: [], projectiles: [],
+    rep: { citizens: 50, law: 50, merc: 50, deta: 50 },
+  });
+  player.x = 400; player.y = 300; player.angle = 0; player.color = '#00e5ff';
+  player.invincible = false;
+
+  setTimeout(() => {
+    document.getElementById('loadingTip').textContent = 'Spawn des entités...';
+    generateWorld();
+    spawnEnemies();
+    // Spawn civilians
+    for (let i = 0; i < 15; i++) {
+      spawnCivilian(100 + Math.random() * MAP_W * TILE_SIZE - 200, 100 + Math.random() * MAP_H * TILE_SIZE - 200);
+    }
+    initQuests();
+    initSkillTree();
+    selectGas('inferno');
+    updateHUD();
+    updateRepBars();
+    resizeCanvas();
+
+    setTimeout(() => {
+      showScreen('screen-game');
+      gameState.running = true;
+      lastTime = performance.now();
+      requestAnimationFrame(gameLoop);
+
+      // Show act title
+      setTimeout(() => {
+        document.getElementById('actNumber').textContent = 'ACTE I';
+        document.getElementById('actName').textContent = 'LE CONTRAT';
+        document.getElementById('actTitle').classList.add('show');
+      }, 500);
+
+      // Intro dialogue
+      setTimeout(() => {
+        triggerDialogue('ALEX', 'Nova Déta. Cette ville m\'a tout pris. Il est temps que Déta Corp paie. Lana, tu es prête ?', [
+          { text: '(Lana) Toujours. Les terminaux sont ma cible.', action: () => {} },
+          { text: 'En avant. Pas de pitié.', action: () => {} },
+        ]);
+      }, 3000);
+    }, 1000);
+  }, 1500);
+}
 
 function showLoadGame() {
   if (loadGame()) {
@@ -3864,3 +3918,137 @@ document.addEventListener('keydown', e => {
 
 // ── Enhanced startNewGame to init audio & weapons ─────────────
 
+function startNewGame() {
+  if (!audioCtx) initAudio();
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+  unlockedAchievements.clear();
+  gameState.gasUsed = {};
+  equipWeapon('pistol');
+  startNewGame_ORIG();
+}
+
+// ── Play music when game starts ───────────────────────────────
+const _origAdvanceAct = advanceAct;
+function advanceAct(act) {
+  _origAdvanceAct(act);
+  if (audioCtx) playMusic(act);
+}
+
+// ── Enhanced notify with audio ────────────────────────────────
+const _origNotify = notify;
+function notify(msg, type) {
+  _origNotify(msg, type);
+  if (type === 'success' && audioCtx) sfxNotif();
+}
+
+// ── Leaderboard resistance achievement ───────────────────────
+const _origTriggerDialogue = triggerDialogue;
+function triggerDialogue(speaker, text, choices) {
+  // Patch resistance choice to unlock achievement
+  const patchedChoices = choices.map(c => {
+    if (c.text && c.text.includes('Rejoindre la résistance')) {
+      return { ...c, action: () => { unlockAchievement('resistance_ally'); c.action && c.action(); } };
+    }
+    return c;
+  });
+  _origTriggerDialogue(speaker, text, patchedChoices);
+}
+
+// ── Liam spared achievement ───────────────────────────────────
+const _origLiamSpared = liamSpared;
+function liamSpared() {
+  unlockAchievement('liam_mercy');
+  _origLiamSpared();
+}
+
+// ── Victory achievement ───────────────────────────────────────
+const _origTriggerVictory = triggerVictory;
+function triggerVictory() {
+  const { citizens, law } = gameState.rep;
+  if (citizens > 75 && law > 60) unlockAchievement('nova_free');
+  _origTriggerVictory();
+}
+
+// ── Initialize overrides ──────────────────────────────────────
+// These are used by patched functions above — no extra wiring needed
+// since JS closures capture the originals before patching.
+
+// ── Controls hint extra ───────────────────────────────────────
+// Append R/Q to controls hint already in DOM after load
+window.addEventListener('load', () => {
+  const hint = document.querySelector('.controls-hint');
+  if (hint) {
+    const rows = [
+      { key:'R', label:'Recharger' },
+      { key:'Q', label:'Changer arme' },
+    ];
+    rows.forEach(r => {
+      const d = document.createElement('div');
+      d.className = 'ctrl-row';
+      d.innerHTML = `<div class="key">${r.key}</div> ${r.label}`;
+      hint.appendChild(d);
+    });
+  }
+});
+
+// Boot — init audio context on first interaction
+document.addEventListener('pointerdown', () => {
+  if (!audioCtx) initAudio();
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+}, { once: true });
+
+
+// Periodic quest update
+setInterval(() => {
+  if (gameState.running && !gameState.paused) updateQuests();
+}, 2000);
+
+// Boss auto-damage from projectiles (click on boss area)
+document.getElementById('gameCanvas').addEventListener('click', (e) => {
+  if (!gameState.bossActive || gameState.paused) return;
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  const bx = canvas.width/2, by = canvas.height * 0.4;
+  const dx = mx - bx, dy = my - by;
+  if (dx*dx + dy*dy < 80*80) {
+    const dmg = 15 + (gameState.skills['force_04'] ? 10 : 0);
+    gameState.bossHp -= dmg;
+    gameState.score += 20;
+    notify(`Coup sur Liam ! -${dmg} PV`, 'warning');
+  }
+});
+
+// ── BOOT SEQUENCE (BUG FIX) ─────────────────────────────────────────────────
+// The loading screen starts as active. After a brief boot animation,
+// transition to the intro screen and start the particle system.
+(function boot() {
+  const loadingTipEl = document.getElementById('loadingTip');
+  const bootMessages = [
+    'Initialisation de Nova Déta...',
+    'Chargement des systèmes IA...',
+    'Connexion au réseau Déta Corp...',
+    'Génération de la carte...',
+    'Bienvenue dans Nova Déta 2047.',
+  ];
+  let msgIdx = 0;
+  const msgInterval = setInterval(() => {
+    msgIdx++;
+    if (msgIdx < bootMessages.length && loadingTipEl) {
+      loadingTipEl.textContent = bootMessages[msgIdx];
+    } else {
+      clearInterval(msgInterval);
+    }
+  }, 600);
+
+  // After ~3.5s boot animation, show intro
+  setTimeout(() => {
+    clearInterval(msgInterval);
+    initParticles();
+    showScreen('screen-intro');
+    animateParticles();
+  }, 3200);
+})();
+</script>
+</body>
+</html>
