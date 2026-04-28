@@ -4018,36 +4018,16 @@ document.getElementById('gameCanvas').addEventListener('click', (e) => {
   }
 });
 
-// ── BOOT SEQUENCE (BUG FIX) ─────────────────────────────────────────────────
-// The loading screen starts as active. After a brief boot animation,
-// transition to the intro screen and start the particle system.
-(function boot() {
-  const loadingTipEl = document.getElementById('loadingTip');
-  const bootMessages = [
-    'Initialisation de Nova Déta...',
-    'Chargement des systèmes IA...',
-    'Connexion au réseau Déta Corp...',
-    'Génération de la carte...',
-    'Bienvenue dans Nova Déta 2047.',
-  ];
-  let msgIdx = 0;
-  const msgInterval = setInterval(() => {
-    msgIdx++;
-    if (msgIdx < bootMessages.length && loadingTipEl) {
-      loadingTipEl.textContent = bootMessages[msgIdx];
-    } else {
-      clearInterval(msgInterval);
-    }
-  }, 600);
 
-  // After ~3.5s boot animation, show intro
-  setTimeout(() => {
-    clearInterval(msgInterval);
-    initParticles();
-    showScreen('screen-intro');
-    animateParticles();
-  }, 3200);
-})();
+  // -- Demarrage fiable de l'intro --
+  (function() {
+    setTimeout(function() {
+      document.getElementById("screen-loading").classList.remove("active");
+      document.getElementById("screen-intro").classList.add("active");
+      initParticles();
+      animateParticles();
+    }, 2000);
+  })();
 </script>
 </body>
 </html>
