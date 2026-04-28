@@ -1516,14 +1516,14 @@
 </div>
 
 <!-- ═══ LOADING SCREEN ═══ -->
-<div class="screen active" id="screen-loading">
+<div class="screen" id="screen-loading">
   <div class="loading-logo">SUPPRESSION DÉTA</div>
   <div class="loading-bar-outer"><div class="loading-bar-fill"></div></div>
   <div class="loading-tip" id="loadingTip">Initialisation de Nova Déta...</div>
 </div>
 
 <!-- ═══ INTRO / MAIN MENU ═══ -->
-<div class="screen" id="screen-intro">
+<div class="screen active" id="screen-intro">
   <div class="intro-bg"></div>
   <canvas id="particleCanvas" class="intro-particles"></canvas>
 
@@ -4019,25 +4019,3 @@ document.getElementById('gameCanvas').addEventListener('click', (e) => {
 });
 
 
-  // -- Demarrage fiable de l'intro --
-  (function() {
-    setTimeout(function() {
-      document.getElementById("screen-loading").classList.remove("active");
-      document.getElementById("screen-intro").classList.add("active");
-      initParticles();
-      animateParticles();
-    }, 2000);
-  })();
-
-  // -- Demarrage fiable de l'intro --
-  (function() {
-    setTimeout(function() {
-      document.getElementById("screen-loading").classList.remove("active");
-      document.getElementById("screen-intro").classList.add("active");
-      initParticles();
-      animateParticles();
-    }, 2000);
-  })();
-</script>
-</body>
-</html>
